@@ -1,0 +1,11 @@
+split,seed,train_n,test_n,scaffold_group_overlap,molecule_group_overlap,structure_solvent_group_overlap,status
+1,42,3620,1584,0,0,0,PASS
+2,142,4118,1086,0,0,0,PASS
+3,242,3854,1350,0,0,0,PASS
+4,342,4160,1044,0,0,0,PASS
+5,442,3698,1506,0,0,0,PASS
+6,542,4164,1040,0,0,0,PASS
+7,642,3874,1330,0,0,0,PASS
+8,742,4164,1040,0,0,0,PASS
+9,842,4139,1065,0,0,0,PASS
+10,942,4164,1040,0,0,0,PASS

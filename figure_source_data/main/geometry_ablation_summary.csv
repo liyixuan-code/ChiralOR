@@ -1,0 +1,4 @@
+variant,model_key,n_features,OOF_ROC_AUC,OOF_PR_AUC,fold_AUC_mean,fold_AUC_sd,CI95_lo,CI95_hi,delta_vs_baseline
+"Full CatBoost_v2 / Model B (2,283)",CatBoost_v2 (Model B),2283,0.9278,0.9005,0.9285,0.0049,0.9204,0.935,0.0108
+"Baseline (2,276, no signed-geom.)","CatBoost_v2 baseline (2276, no signed-geom.)",2276,0.917,0.8849,0.9179,0.0058,0.9092,0.925,0.0
+Signed-geometry only (7),CatBoost_v2 signed-geometry only (7),7,0.8625,0.8089,0.8628,0.0133,0.852,0.8727,-0.0545

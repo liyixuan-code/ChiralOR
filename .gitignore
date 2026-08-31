@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+~$*
+
+# Logs/cache
+*.log
+.cache/
+.pytest_cache/
+
+# Credentials / private configuration
+*credential*
+*credentials*
+*secret*
+*token*
+*api_key*
+*apikey*
+private_config*
+
+# Restricted source data
+*reaxys*
+*Reaxys*
+raw_export*/
+source_data*/
+restricted_data*/
+private_mapping*/
+*smiles_mapping*
+*structure_mapping*
+
+# Deployment artifacts not part of publication Schema A
+X_web_*
+ChiralOR_Web_Model_*
+CHIRALOR_WEB_MODEL_*/
+
+# Historical/conflicting artifacts
+B3_V31_C3_ABLATION_FINAL.csv
