@@ -1,0 +1,8 @@
+﻿variable_number,variable_name,units,definition,generation_scope
+1,Signed tetrahedral volume,Å^3,Oriented scalar-triple-product volume around the stereocenter using a fixed local atom-order convention; sign records local tetrahedral orientation.,conformer-derived
+2,Signed substituent-to-ring-plane distance,Å,Signed out-of-plane displacement of the selected exocyclic substituent relative to the oriented fused-ring plane.,conformer-derived
+3,Oriented ring-normal · substituent-vector projection,"dimensionless [-1,1]",Normalized stereocenter-to-substituent vector projected onto the oriented ring normal.,conformer-derived
+4,Signed substituent–stereocenter–ring-neighbor1–ring-neighbor2 dihedral,degrees,"Directed torsion defined by the selected exocyclic substituent, stereocenter, and two ordered fused-ring neighbors.",conformer-derived
+5,Nearest-N/S-referenced signed dihedral,degrees,Directed dihedral referenced to the N or S atom with the smallest 3D Euclidean distance to the stereocenter; through-space nearest-heteroatom rule.,conformer-derived
+6,sin(baseline P/M dihedral),dimensionless,Sine transform of the pre-existing baseline P/M dihedral; not recomputed from the new conformer.,deterministic transform of baseline torsion
+7,cos(baseline P/M dihedral),dimensionless,Cosine transform of the pre-existing baseline P/M dihedral; removes angular discontinuity with sine encoding and is not individually sign-reversing.,deterministic transform of baseline torsion

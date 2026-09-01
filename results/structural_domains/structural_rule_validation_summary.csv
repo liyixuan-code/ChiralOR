@@ -1,0 +1,8 @@
+check,value
+observations,5204
+classes,41
+OR_positive,2063
+OR_negative,3141
+classes_consistency_ge_90_pct,14
+classes_n_ge_10,24
+classes_n_ge_10_and_consistency_ge_90_pct,4

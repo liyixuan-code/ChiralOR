@@ -1,0 +1,6 @@
+fold,n,top5
+0,30,MACCS_129|geo:signed_dihedral_subst_c_rn1_rn2;geo:signed_tetra_volume|geo:subst_to_ringplane_signed_dist;ECFP_1419|geo:baseline_pm_dihedral_sin;MACCS_147|geo:signed_tetra_volume;sPAS_9|PAS_0
+1,30,MACCS_129|geo:signed_dihedral_subst_c_rn1_rn2;MACCS_125|geo:signed_tetra_volume;MACCS_129|geo:signed_tetra_volume;MACCS_62|geo:signed_tetra_volume;ECFP_1412|geo:signed_tetra_volume
+2,30,MACCS_129|geo:signed_dihedral_subst_c_rn1_rn2;ECFP_1325|geo:signed_tetra_volume;solvent_code|geo:signed_dihedral_subst_c_rn1_rn2;3D_Sphero|geo:signed_tetra_volume;ECFP_1412|MACCS_121
+3,29,MACCS_129|geo:signed_dihedral_subst_c_rn1_rn2;geo:subst_to_ringplane_signed_dist|geo:baseline_pm_dihedral_sin;ECFP_1412|PAS_5;geo:signed_tetra_volume|geo:subst_to_ringplane_signed_dist;PAS_15|geo:baseline_pm_dihedral_sin
+4,9,MACCS_62|geo:signed_tetra_volume;MACCS_129|geo:signed_dihedral_subst_c_rn1_rn2;geo:signed_tetra_volume|geo:subst_to_ringplane_signed_dist;ECFP_1412|PAS_5;ECFP_1279|geo:signed_tetra_volume

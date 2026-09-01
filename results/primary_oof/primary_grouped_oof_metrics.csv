@@ -1,0 +1,12 @@
+﻿metric,reported_value,evaluation_basis,notes,n,validation_protocol,source_location
+ROC-AUC,0.9278,continuous probability,,5204,5-fold structure–solvent grouped OOF,Main Table 2 / SI Table S5
+Average Precision,0.9005,continuous probability,sklearn.metrics.average_precision_score,5204,5-fold structure–solvent grouped OOF,Main Table 2 / SI Table S5
+Accuracy,0.8599,t=0.5,,5204,5-fold structure–solvent grouped OOF,Main Table 2 / SI Table S5
+Balanced Accuracy,0.8495,t=0.5,,5204,5-fold structure–solvent grouped OOF,Main Table 2 / SI Table S5
+Sensitivity,0.7993,t=0.5,OR+ positive class,5204,5-fold structure–solvent grouped OOF,Main Table 2 / SI Table S5
+Specificity,0.8997,t=0.5,OR+ positive class,5204,5-fold structure–solvent grouped OOF,Main Table 2 / SI Table S5
+Precision,0.8396,t=0.5,PPV,5204,5-fold structure–solvent grouped OOF,Main Table 2 / SI Table S5
+NPV,0.8722,t=0.5,Negative predictive value,5204,5-fold structure–solvent grouped OOF,Main Table 2 / SI Table S5
+F1,0.819,t=0.5,,5204,5-fold structure–solvent grouped OOF,Main Table 2 / SI Table S5
+MCC,0.7054,t=0.5,Matthews correlation coefficient,5204,5-fold structure–solvent grouped OOF,Main Table 2 / SI Table S5
+Brier score,0.1027,continuous probability,,5204,5-fold structure–solvent grouped OOF,Main Table 2 / SI Table S5

@@ -1,0 +1,11 @@
+﻿Feature family,Dimensions,Primary representation,Rationale for inclusion,Reference / basis
+ECFP6 / Morgan,"2,048",Chirality-aware local atom-topology neighborhoods (hashed bits),Broad coverage of local connectivity and substitution patterns; strong topological baseline,Rogers & Hahn [21]; RDKit [23]
+MACCS keys,167,Predefined structural motifs/substructure keys,"Compact, relatively interpretable structural patterns complementary to ECFP",Durant et al. [22]; RDKit [23]
+RDKit 2D,8,"Molecular weight, lipophilicity, polarity, hydrogen bonding, flexibility, ring and aromatic content",Global physicochemical and molecular-complexity context,RDKit [23]
+PAS,20,Unsigned local atomic-property descriptor block around the stereocenter,Complements sPAS with local physicochemical information without signed ligand-order terms,In-house prior representation
+sPAS,20,CIP-ordered signed differences in local atomic properties,Explicitly retains ligand order/direction within PAS-like information,"In-house prior representation; general chirality-aware ordering concepts [12,13]"
+3D shape,10,"Principal moments, normalized principal moments, and global shape descriptors",Three-dimensional global shape information not captured by 2D topology,RDKit 3D descriptors [23]
+Solvent,1,Five-category measurement-solvent context,Explicit experimental measurement context,Experimental metadata in this study
+P/M + baseline dihedral,2,Local fused-ring helicity and corresponding torsion,Carries forward scaffold-specific helicity motivation from earlier chroman work,IUPAC helicity [19]; prior chroman P/M–SOR study [9]
+Direction-sensitive geometry block,7,Five signed/oriented local 3D coordinates plus sin/cos encoding of the baseline P/M dihedral,Task-specific fused-ring orientation module motivated by development-stage error analysis; incremental value tested by paired grouped-OOF ablation,"Signed/chiral volume [24,27]; directed/improper torsion and out-of-plane coordinates [25]; reflection-sensitive torsion/circular encoding [26]"
+Total,"2,283",Complementary topology-physicochemical-chirality-shape-context representation,,

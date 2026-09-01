@@ -1,190 +1,86 @@
-# ChiralOR: Machine Learning for Optical Rotation Sign Prediction
+# ChiralOR v1.1.0
 
-[![DOI](https://img.shields.io/badge/DOI-pending-blue.svg)](https://doi.org/pending)
+**ChiralOR: An Interpretable Chirality-Aware Machine Learning Model for Optical-Rotation Sign Prediction**
 
-## Overview
+ChiralOR is the publication code and structure-free reproducibility package for optical-rotation sign prediction in the curated 5,204-observation study dataset.
 
-ChiralOR predicts the sign of optical rotation (OR+ vs OR−) in chiral fused-ring molecules from molecular structure and solvent conditions using machine learning.
+- Repository: https://github.com/liyixuan-code/ChiralOR
+- Existing Zenodo v1.0.0 archive: 10.5281/zenodo.22210778
+- Zenodo concept DOI (all versions): 10.5281/zenodo.22210777
 
-**Publication**: [Citation to be added after publication]
+Version **v1.1.0** expands the release with recovered publication-workflow code, figure workflows, public-safe source tables, provenance maps, and the five frozen Publication Schema A CatBoost fold models. A new version-specific Zenodo DOI can be added after the v1.1.0 Zenodo deposit is minted.
 
-**Dataset**: 5,204 observations (3,141 OR−, 2,063 OR+)
+## Quick verification
 
-**Model**: CatBoost classifier with 2,283-dimensional feature representation
+From the repository root:
 
-**Performance** (Structure-solvent grouped 5-fold OOF):
-- ROC-AUC: 0.928
-- Average Precision: 0.901
-- Scaffold-disjoint mean AUC: 0.785 ± 0.051
+```bash
+python scripts/reproduction/01_verify_primary_oof_metrics.py
+python scripts/reproduction/02_verify_molecule_disjoint_metrics.py
+python scripts/reproduction/03_verify_scaffold_disjoint_results.py
+```
 
-## Important: Publication Schema A vs Deployment Schema B
-
-⚠️ **All performance estimates in the publication apply exclusively to Publication Schema A.**
-
-The web deployment at chiralor.cn uses a distinct feature schema (Schema B) optimized for prospective predictions. **Do not assign publication performance metrics to Schema B.**
-
-See [deployment/README_SCHEMA_B.md](deployment/README_SCHEMA_B.md) for details.
+These scripts verify the reported primary grouped-OOF, molecule-disjoint, and repeated scaffold-disjoint results from public-safe frozen output artifacts.
 
 ## Publication Schema A
 
-**2,283 features**:
-- 2,048 ECFP6 bits
-- 167 MACCS keys
-- 8 core RDKit 2D descriptors
-- 20 signed PAS (sPAS)
-- 20 unsigned PAS
-- 10 3D shape descriptors
-- 1 categorical solvent code
-- 1 baseline P/M dihedral
-- 1 P/M binary code
-- **7 direction-sensitive geometry variables**
+The ordered schema contains **2,283 features**:
 
-## Installation
+- ECFP6: 2,048
+- MACCS: 167
+- RDKit 2D descriptors: 8
+- signed PAS (sPAS): 20
+- PAS: 20
+- 3D shape descriptors: 10
+- solvent code: 1
+- baseline P/M dihedral: 1
+- P/M code: 1
+- direction-sensitive geometry: 7
 
-```bash
-# Clone repository
-git clone https://github.com/[REPO_URL]
-cd ChiralOR
+The 2,276-feature baseline assembly is represented by `scripts/original/feature_generation/rebuild_features_v2.py`; the seven direction-sensitive variables are implemented in `scripts/original/feature_generation/block2_signed_geometry.py` with `ring_neighbor_shared.py`. The exact frozen feature order is in `data/features_schema_A/feature_schema.csv`.
 
-# Create environment
-conda env create -f environment.yml
-conda activate chiralor
+The retained historical `baseline_features.py` is stored under `scripts/historical/nonfinal/` because it is not the final Publication Schema A implementation.
 
-# Or using pip
-pip install -r requirements.txt
-```
+## Repository contents
 
-**Requirements**:
-- Python 3.11.9
-- NumPy 2.4.6
-- pandas 3.0.5
-- scikit-learn 1.9.0
-- CatBoost 1.2.10
-- RDKit 2026.03.5
+- `models/publication_schema_A/` — five frozen publication fold models.
+- `scripts/original/` — recovered original publication scripts and support modules.
+- `scripts/reproduction/` — compact public verification/reference scripts. The grouped-CV training reference requires private inputs and is not needed to verify the frozen publication results.
+- `scripts/historical/nonfinal/` — retained non-final development code, explicitly separated from the publication workflow.
+- `data/features_schema_A/` — exact ordered 2,283-feature schema.
+- `data/splits/` — structure-free public fold/split assignments.
+- `results/` — public-safe predictions, metrics, validation summaries, SHAP summaries, interaction summaries, and structural-domain tables.
+- `figure_source_data/` — machine-readable, public-safe source tables for main and Supporting Information figures.
+- `reproducibility/` — publication pipeline, figure lineage, script provenance, model-binary identity, limitations, and audit summaries.
+- `deployment/README_SCHEMA_B.md` — distinction between Publication Schema A and deployment-specific Schema B.
 
-See [reproducibility/SOFTWARE_ENVIRONMENT.md](reproducibility/SOFTWARE_ENVIRONMENT.md) for complete environment.
+## Structural domains R01–R41
 
-## Repository Structure
+The recovered stereochemistry-invariant classification workflow is represented by `scripts/original/structural_domains/generate_stereo_invariant_rules.py` and the shared ring-neighbor logic. The final public-safe 5,204-observation class table is `results/structural_domains/structural_rule_table_final_5204.csv` (also provided in `figure_source_data/supporting_information/structural_rule_table.csv`). It contains 41 mutually exclusive classes and reproduces the final SI class counts and empirical directional consistencies.
 
-```
-ChiralOR/
-├── data/                           # [LICENSE REVIEW REQUIRED]
-│   ├── features_schema_A/         # 2,283-dimensional feature matrix
-│   └── splits/                    # Fold assignments
-├── models/
-│   └── publication_schema_A/      # 5 CatBoost fold models
-├── results/
-│   ├── primary_oof/               # Grouped OOF predictions
-│   ├── molecule_disjoint/         # Molecule-level validation
-│   └── scaffold_disjoint/         # Scaffold generalization
-├── scripts/                        # Reproduction scripts
-├── reproducibility/                # Provenance documentation
-└── deployment/                     # Schema B documentation
-```
+OR sign is **not** used to define the structural classes; OR counts and consistency are descriptive summaries computed after class assignment.
 
-## Reproducibility
+## Data and licensing restrictions
 
-**Tier 1 - Fully Reproducible** (from frozen predictions/artifacts):
-- ✅ Primary grouped-OOF (11 metrics)
-- ✅ Molecule-disjoint sensitivity
-- ✅ Scaffold-disjoint evaluation (10 splits)
+This is intentionally a **structure-free** public release. It does **not** redistribute:
 
-**Tier 2 - Documented from Final SI**:
-- ⚠️ Ablation (full model verified, no-signed/geometry-only documented)
-- ⚠️ Benchmark (CatBoost verified, 6 others documented)
-- ⚠️ SHAP/Interaction (methodology documented)
+- raw Reaxys exports or Reaxys identifiers;
+- canonical-SMILES observation tables or other molecular-structure tables;
+- private identifier-to-structure mappings;
+- Bemis–Murcko structure strings;
+- the private 5,204 × 2,283 feature matrix; or
+- other third-party licensed source-record fields.
 
-See [reproducibility/FINAL_REPRODUCIBILITY_AUDIT.md](reproducibility/FINAL_REPRODUCIBILITY_AUDIT.md) and [reproducibility/KNOWN_LIMITATIONS.md](reproducibility/KNOWN_LIMITATIONS.md).
+No separate open-source software license is granted by this repository. The files are released for publication transparency and reproducibility; reuse and redistribution remain subject to copyright and third-party restrictions.
 
-## Primary Validation
+Because licensed/private inputs are excluded, the public package verifies the frozen publication outputs and exposes the recovered computational logic, but it is not a complete public raw-record-to-feature-matrix rebuild.
 
-Reproduce primary grouped-OOF metrics from frozen predictions:
+## Historical provenance notes
 
-```bash
-python scripts/verify_primary_oof.py \
-  --predictions results/primary_oof/oof_predictions_master_labels_v2.parquet
-```
+The curation workflow was multi-stage and the final 5,204-record artifact and all publication counts were verified. The exact wrapper used for the initial source-file import and the final serialization step was not uniquely identified. Likewise, the exact first historical persistence entry point for the root `ModelB_fold*.cbm` files was not uniquely identified; however, the historical, Figure-13-regenerated, and public fold models were verified as byte-identical for all five folds.
 
-**Expected output**: ROC-AUC 0.9278, AP 0.9005
-
-## Molecule-Disjoint Validation
-
-```bash
-python scripts/verify_molecule_disjoint.py \
-  --predictions results/molecule_disjoint/canonical_smiles_grouped_oof.csv
-```
-
-**Expected output**: ROC-AUC 0.9264
-
-## Scaffold-Disjoint Evaluation
-
-```bash
-python scripts/verify_scaffold_disjoint.py \
-  --results results/scaffold_disjoint/SCAFFOLD_SPLIT_RESULTS_FINAL.csv
-```
-
-**Expected output**: Mean AUC 0.7850 ± 0.0508 (10 splits)
-
-## Seven Signed Geometry Features
-
-The 7 direction-sensitive geometry variables (indices 2276-2282 in Schema A):
-
-1. signed_tetra_volume
-2. subst_to_ringplane_signed_dist
-3. ringnormal_dot_substvec
-4. signed_dihedral_subst_c_rn1_rn2
-5. signed_dihedral_NS_path
-6. baseline_pm_dihedral_sin
-7. baseline_pm_dihedral_cos
-
-**Incremental contribution**: ΔAUC +0.011 (bootstrap 95% CI +0.007 to +0.015)
-
-## Data Availability
-
-⚠️ **[LICENSE REVIEW REQUIRED]**
-
-Chemical structures and labels are derived from literature data accessed via Reaxys (Elsevier). Due to licensing restrictions:
-
-- ❌ Raw Reaxys exports: Not redistributable
-- ⚠️ Processed data: Pending institution legal review
-
-This repository provides:
-- ✅ Derived 2,283-dimensional feature matrix (if approved)
-- ✅ Fold assignments
-- ✅ Model predictions
-- ✅ Scaffold split assignments
-- ✅ Aggregated statistics
-
-For data access inquiries, contact [AUTHOR EMAIL].
+See `reproducibility/PUBLICATION_PIPELINE_MAP.csv`, `reproducibility/SCRIPT_PROVENANCE_MAP.csv`, and `reproducibility/KNOWN_LIMITATIONS.md` for details.
 
 ## Citation
 
-```bibtex
-@article{chiralor2026,
-  title={[TITLE]},
-  author={[AUTHORS]},
-  journal={Journal of Chemical Information and Modeling},
-  year={2026},
-  doi={[DOI]}
-}
-```
-
-## License
-
-**Software**: [TO BE DETERMINED BY AUTHOR]
-
-**Data**: Subject to Reaxys licensing terms. See REAXYS_DATA_RELEASE_POLICY.md.
-
-## Acknowledgments
-
-Chemical structures and optical rotation data were derived from literature accessed via Reaxys (Elsevier).
-
-## Contact
-
-[AUTHOR CONTACT]
-
----
-
-**Repository Version**: 1.0.0-candidate  
-**Last Updated**: 2026-08-31  
-**Status**: Pending author review and license decisions
+For the repository, cite Yixuan Li and the ChiralOR repository. For a frozen archival snapshot, use the version-specific Zenodo DOI corresponding to the release used. The existing v1.0.0 snapshot is DOI **10.5281/zenodo.22210778**; the concept DOI is **10.5281/zenodo.22210777**.

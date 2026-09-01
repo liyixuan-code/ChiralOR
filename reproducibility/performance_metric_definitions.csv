@@ -1,0 +1,13 @@
+﻿metric,definition,metric_type,implementation_notes,source_location
+Accuracy,(TP + TN)/(TP + TN + FP + FN),threshold-dependent,t=0.5,SI S5.3
+Sensitivity,TP/(TP + FN),threshold-dependent,OR+ positive class; t=0.5,SI S5.3
+Specificity,TN/(TN + FP),threshold-dependent,OR+ positive class; t=0.5,SI S5.3
+Precision,TP/(TP + FP),threshold-dependent,PPV; t=0.5,SI S5.3
+NPV,TN/(TN + FN),threshold-dependent,t=0.5,SI S5.3
+F1,2TP/(2TP + FP + FN),threshold-dependent,t=0.5,SI S5.3
+Balanced accuracy,(Sensitivity + Specificity)/2,threshold-dependent,t=0.5,SI S5.3
+MCC,(TP×TN − FP×FN)/sqrt[(TP+FP)(TP+FN)(TN+FP)(TN+FN)],threshold-dependent,t=0.5,SI S5.3
+ROC-AUC,Integral from 0 to 1 of TPR(FPR) d(FPR),threshold-independent,continuous pooled OOF probabilities,SI S5.3
+Average Precision (AP),sum_k (R_k − R_(k−1)) P_k,threshold-independent,sklearn.metrics.average_precision_score; not trapezoidal PR area,SI S5.3
+Brier score,(1/N) sum_i (p_i − y_i)^2,probability calibration,continuous pooled OOF probabilities,SI S5.3
+ECE,sum_b (n_b/N) |observed_frequency_b − mean_predicted_probability_b|,probability calibration,10 equal-frequency bins,SI S5.3

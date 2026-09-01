@@ -1,5 +1,5 @@
-metric,estimate,ci_lower,ci_upper,notes
-Brier,0.1027,0.0952,0.1103,Primary grouped-OOF
-ECE,0.0215,,,10-bin equal-frequency
-Calibration_slope,0.893,0.843,0.953,
-Calibration_intercept,0.067,-0.045,0.179,
+﻿metric,estimate,ci_lower,ci_upper,method_or_ci_type,interpretation_note
+Brier score,0.1027,0.0952,0.1103,group-aware bootstrap CI,pooled grouped-OOF probabilities
+ECE,0.0215,0.0153,0.0345,10 equal-frequency bins,supplementary bin-sensitive diagnostic
+Calibration slope,0.893,0.843,0.953,95% CI,slope < 1 indicates mild overconfidence at extremes
+Calibration intercept,0.067,-0.045,0.179,95% CI,intercept CI includes zero

@@ -1,8 +1,9 @@
-model,n_features,OOF_ROC_AUC,OOF_PR_AUC,fold_AUC_mean,fold_AUC_sd,CI95_lo,CI95_hi,cross_fitted,fully_reproducible,delta_vs_CatBoost_v2
-Logistic Regression,2283,0.8366,0.7567,0.8366,0.017,0.8241,0.8483,n/a(single model),yes,-0.0912
-Random Forest,2283,0.926,0.8979,0.927,0.0038,0.9188,0.9329,n/a(single model),yes,-0.0018
-ExtraTrees,2283,0.9248,0.8923,0.9257,0.0089,0.917,0.9321,n/a(single model),yes,-0.003
-HistGradientBoosting,2283,0.9172,0.8844,0.9175,0.0047,0.9091,0.9246,n/a(single model),yes,-0.0106
-XGBoost,2283,0.9231,0.8926,0.9234,0.0051,0.9155,0.9305,n/a(single model),yes,-0.0047
-LightGBM,2283,0.9209,0.8875,0.9212,0.0039,0.913,0.9282,n/a(single model),yes,-0.0069
-CatBoost_v2 (Model B),2283,0.9278,0.9005,0.9285,0.0049,0.9204,0.935,n/a(single model),yes,0.0
+﻿model,roc_auc,average_precision,accuracy,balanced_accuracy,f1,brier_score,fold_roc_auc_mean,fold_roc_auc_sd,sensitivity,specificity,precision,mcc,npv,benchmark_role
+Logistic Regression,0.8366,0.7563,0.7984,0.7884,0.7443,0.1798,0.8366,0.0190,0.7402,0.8367,0.7485,0.5780,0.8306,standard single-model benchmark
+HistGradientBoosting,0.9172,0.8843,0.8449,0.8349,0.8008,0.1103,0.9175,0.0052,0.7862,0.8835,0.8159,0.6742,0.8629,standard single-model benchmark
+LightGBM,0.9209,0.8874,0.8465,0.8365,0.8028,0.1135,0.9212,0.0043,0.7882,0.8848,0.8179,0.6775,0.8641,standard single-model benchmark
+XGBoost,0.9231,0.8926,0.8538,0.8427,0.8106,0.1068,0.9234,0.0057,0.7891,0.8962,0.8332,0.6923,0.8662,standard single-model benchmark
+Extra Trees,0.9248,0.8928,0.8528,0.8407,0.8082,0.1060,0.9257,0.0100,0.7824,0.8991,0.8358,0.6900,0.8628,standard single-model benchmark
+Random Forest,0.9260,0.8982,0.8424,0.8284,0.7928,0.1099,0.9270,0.0042,0.7605,0.8962,0.8280,0.6676,0.8507,standard single-model benchmark
+CatBoost,0.9278,0.9005,0.8599,0.8495,0.8190,0.1027,0.9285,0.0055,0.7993,0.8997,0.8396,0.7054,0.8722,standard single-model benchmark
+SuperLearner (6-base GBDT),0.9330,0.9081,0.8586,0.8513,0.8207,0.1013,0.9343,0.0039,,,,,,advanced cross-fitted ensemble comparator

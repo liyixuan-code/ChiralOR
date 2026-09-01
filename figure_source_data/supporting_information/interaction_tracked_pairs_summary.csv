@@ -1,0 +1,4 @@
+﻿pair,top10_freq,top20_freq,appear_in_n_new_seeds,mean_rank,median_rank,rank_sd,rank_iqr,mean_magnitude,magnitude_sd,seed42_rank,seed42_mag
+MACCS_129 x geo:signed_dihedral_subst_c_rn1_rn2,5/5,5/5,5,1.0,1,0.0,0.0,0.044426,0.001706,1,0.046562
+geo:signed_tetra_volume x geo:subst_to_ringplane_signed_dist,5/5,5/5,5,2.4,2,0.8,0.0,0.026171,0.001987,2,0.026994
+ECFP_1412 x PAS_5,5/5,5/5,5,3.2,3,0.4,0.0,0.024109,0.001655,3,0.023472

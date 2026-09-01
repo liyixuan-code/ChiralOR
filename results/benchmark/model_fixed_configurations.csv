@@ -1,0 +1,8 @@
+﻿Model,Core fixed configuration,Scaling,Hyperparameter search
+Logistic Regression,C=1.0; max_iter=2000,StandardScaler,None
+Random Forest,n_estimators=500; max_depth=None,None,None
+Extra Trees,n_estimators=500; max_depth=None,None,None
+HistGradientBoosting,max_iter=500; learning_rate=0.05; max_depth=7,None,None
+XGBoost,n_estimators=500; learning_rate=0.05; max_depth=7,None,None
+LightGBM,n_estimators=500; learning_rate=0.05; max_depth unconstrained,None,None
+CatBoost,iterations=288; learning_rate=0.1; depth=8; l2_leaf_reg=1; random_seed=42; Logloss,None,None
