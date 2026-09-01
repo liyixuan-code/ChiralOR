@@ -1,0 +1,5 @@
+﻿observed_label,predicted_label_t0_5,count,cell_type
+OR-,OR-,2826,TN
+OR-,OR+,315,FP
+OR+,OR-,414,FN
+OR+,OR+,1649,TP

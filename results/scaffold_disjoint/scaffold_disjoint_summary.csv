@@ -1,0 +1,11 @@
+﻿item,value,value_text,notes,source_location
+number_of_splits,10,,,SI S5.5
+mean_ROC_AUC,0.785,,,SI S5.5
+sample_SD_ROC_AUC,0.0508,,,SI S5.5
+median_ROC_AUC,0.779,,,SI S5.5
+minimum_ROC_AUC,0.7013,,,SI S5.5
+maximum_ROC_AUC,0.8697,,,SI S5.5
+empirical_2.5_percentile_ROC_AUC,0.708,,,SI S5.5
+empirical_97.5_percentile_ROC_AUC,0.8674,,,SI S5.5
+evaluation_type,,internal scaffold-disjoint assessment,,SI S5.5
+external_validation,,No,All train/test partitions were generated from the same curated dataset,SI S5.5

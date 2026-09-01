@@ -1,0 +1,13 @@
+﻿Feature block,Publication Schema A,Web-deployment Schema B
+ECFP6,"2,048","2,048"
+MACCS,167,167
+RDKit 2D core,8,8
+sPAS,20,20
+PAS (unsigned),20,0
+3D shape,10,10
+Solvent,1 categorical code,5 one-hot columns
+Baseline P/M dihedral,1,0
+pm_code,1,0
+Direction-sensitive geometry,7,5
+Prospective 2D+ (deployment-specific),0,20
+Total,"2,283","2,283"

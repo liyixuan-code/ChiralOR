@@ -1,0 +1,14 @@
+﻿category,item,value,unit,source_location,notes
+data_curation,raw_records,13252,observations,Main Methods 2.1,Raw Reaxys records before curation
+data_curation,intermediate_records,5449,observations,Main Methods 2.1 / SI S1,Intermediate records after structural verification/QC
+data_curation,final_modeling_records,5204,observations,Main Methods 2.1 / SI S1,Final publication Schema A modeling observations
+class_composition,OR_minus,3141,observations,Main Results 3.1,60.4% of final dataset
+class_composition,OR_plus,2063,observations,Main Results 3.1,39.6% of final dataset
+helicity_composition,P,2763,observations,Main Results 3.1,"P/M is a local helicity annotation, not the OR label"
+helicity_composition,M,2441,observations,Main Results 3.1,"P/M is a local helicity annotation, not the OR label"
+helicity_association,Cramers_V_PM_vs_OR,0.028,dimensionless,Main Results 3.1,Reported global association magnitude
+helicity_association,p_value_PM_vs_OR,0.046,p value,Main Results 3.1,Nominal p value reported in manuscript
+representation,baseline_features,2276,features,Main Methods / Conclusions,Baseline already contains P/M helicity and baseline dihedral
+representation,added_direction_sensitive_geometry,7,features,Main Methods / SI S3.2,Incremental direction-sensitive geometry module
+representation,publication_schema_A_total,2283,features,Main Methods / SI Table S2,Final publication feature representation
+structural_domain,structural_domain_classes,41,classes,Main Results 3.1 / SI Table S1,Mutually exclusive R01–R41 structural-domain annotations

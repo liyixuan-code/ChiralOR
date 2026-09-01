@@ -1,4 +1,7 @@
-variant,model_key,n_features,OOF_ROC_AUC,OOF_PR_AUC,fold_AUC_mean,fold_AUC_sd,CI95_lo,CI95_hi,delta_vs_baseline
-"Full CatBoost_v2 / Model B (2,283)",CatBoost_v2 (Model B),2283,0.9278,0.9005,0.9285,0.0049,0.9204,0.935,0.0108
-"Baseline (2,276, no signed-geom.)","CatBoost_v2 baseline (2276, no signed-geom.)",2276,0.917,0.8849,0.9179,0.0058,0.9092,0.925,0.0
-Signed-geometry only (7),CatBoost_v2 signed-geometry only (7),7,0.8625,0.8089,0.8628,0.0133,0.852,0.8727,-0.0545
+﻿analysis_component,metric,estimate,ci_lower,ci_upper,design_or_scope,source_location
+full_publication_schema_A,ROC-AUC,0.9278,,,"2,283 features",SI S5.4 / Main 3.4
+no_direction_sensitive_geometry,ROC-AUC,0.917,,,"2,276 features",SI S5.4 / Main 3.4
+geometry_only,ROC-AUC,0.8625,,,7 features,SI S5.4 / Main 3.4
+full_minus_no_geometry,Delta ROC-AUC,0.0108,0.0065,0.0149,"5,000 paired group-cluster bootstrap replicates",SI S5.4 / Main 3.4
+paired_bootstrap,replicates,5000,,,resampling unit = canonical SMILES × solvent group,SI S5.4
+paired_bootstrap,P(Delta_AUC_gt_0),1.0,,,"all 5,000 resampled differences were positive",SI S5.4

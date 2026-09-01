@@ -1,37 +1,9 @@
-# Known Reproducibility Limitations
+# Known limitations
 
-## 1. Publication Schema A source records
-Molecular structures, raw Reaxys exports, Reaxys identifiers, and other licensed source-record fields are not redistributed in the public repository.
-
-## 2. Full feature matrix
-The frozen 5,204 × 2,283 Publication Schema A feature matrix is not included in the public release unless redistribution permission is confirmed.
-
-## 3. End-to-end feature generation
-The complete historical raw-record-to-Publication-Schema-A feature-generation pipeline was not fully recovered as a single executable workflow.
-
-## 4. Primary historical training entry point
-The exact historical entry-point script that generated the five frozen Publication Schema A CatBoost fold models was not recovered. The five frozen fold models and structure-free pooled OOF predictions are retained, and the reported primary grouped-OOF metrics are independently reproducible from those artifacts.
-
-## 5. Geometry ablation
-The published aggregate results are retained, but the complete historical no-geometry and geometry-only OOF prediction artifacts and the full 5,000-replicate bootstrap vector were not recovered.
-
-## 6. Benchmark
-The final publication benchmark table is provided. Historical per-observation prediction artifacts for all non-CatBoost benchmark models were not completely recovered.
-
-## 7. SuperLearner
-The SuperLearner is retained as an advanced historical comparator in the publication record; complete historical training/prediction provenance is not claimed where artifacts are unavailable.
-
-## 8. Calibration
-Published calibration statistics are provided. Where historical bin-level artifacts are unavailable, any regenerated reliability-bin data must be explicitly labeled as recalculated from frozen OOF predictions.
-
-## 9. SHAP and interaction analyses
-Recovered SHAP/interaction artifacts and original scripts are provided where available. The exact historical sampling procedure for some interaction visualization subsets may not be fully recoverable.
-
-## 10. DFT-assisted development analysis
-The DFT-assisted cases document feature-development provenance. Complete conformer-level calculation records were not retained for all historical cases, and this analysis is not presented as an independent quantitative validation set.
-
-## 11. Public reproducibility scope
-The public structure-free repository supports independent verification of the primary grouped-OOF, molecule-disjoint, and repeated scaffold-disjoint validation analyses. It is not presented as a complete end-to-end recreation of the study from licensed raw database records.
-
-## 12. Schema A versus Schema B
-All reported publication performance, calibration, ablation, and SHAP-based analyses apply to Publication Schema A. The web-deployment Schema B is distinct and is not assigned the publication performance estimates.
+1. **Licensed inputs are not redistributed.** Raw Reaxys exports, Reaxys identifiers, molecular-structure tables/mappings, and the private 5,204 × 2,283 feature matrix are excluded.
+2. **Curation wrapper provenance.** The retained multi-stage curation logic and all publication counts are verified, but the exact wrapper used for the initial source-file import and the final serialization of the 5,204-row table was not uniquely identified.
+3. **Schema A final assembly wrapper.** The 2,276-feature baseline builder, seven direction-sensitive geometry variables, exact 2,283-column order, frozen models, and downstream outputs are verified. A retained `feature_calculator.py` candidate was demonstrably non-final and is intentionally not released as the final driver.
+4. **Primary model first-persistence wrapper.** The exact first historical script that wrote the root `ModelB_fold*.cbm` files was not uniquely identified. The retained historical root models, Figure-13-regenerated models, and public models were verified byte-identical for all five folds.
+5. **SuperLearner historical Full8 lineage.** The historical eight-base workflow is retained, while the final published 0.9330/0.9081 comparator is reproduced by the verified six-base GBDT stacking workflow; the exact historical Full8 execution lineage remains partial.
+6. **DFT-assisted cases.** The final SI documents three recoverable diagnostic cases; complete conformer-level DFT calculation inputs/workflows are not retained in the public package.
+7. **Figure layout.** Some final manuscript figures were renumbered or assembled from recovered scientific source panels; historical script filenames therefore do not always match final manuscript figure numbers.

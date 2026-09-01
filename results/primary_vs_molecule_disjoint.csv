@@ -1,0 +1,12 @@
+﻿Metric,Structure–solvent grouped OOF,Molecule-disjoint grouped OOF,Difference
+ROC-AUC,0.9278,0.9264,-0.0014
+Average Precision,0.9005,0.9033,+0.0028
+Accuracy,0.8599,0.8561,-0.0038
+Balanced Accuracy,0.8495,0.8442,-0.0053
+Sensitivity,0.7993,0.7867,-0.0126
+Specificity,0.8997,0.9016,+0.0019
+Precision,0.8396,0.8401,+0.0005
+NPV,0.8722,0.8655,-0.0067
+F1,0.8190,0.8125,-0.0065
+MCC,0.7054,0.6969,-0.0085
+Brier score,0.1027,0.1035,+0.0008

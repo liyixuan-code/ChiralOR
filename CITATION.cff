@@ -1,28 +1,9 @@
 cff-version: 1.2.0
-message: "If you use this software or data, please cite the publication below."
-title: "ChiralOR: Machine Learning for Optical Rotation Sign Prediction"
-version: 1.0.0
-date-released: 2026-08-31
+message: "If you use this software, please cite the ChiralOR repository and the corresponding manuscript."
+title: "ChiralOR: An Interpretable Chirality-Aware Machine Learning Model for Optical-Rotation Sign Prediction"
+type: software
 authors:
-  - family-names: "[TO BE ADDED]"
-    given-names: "[TO BE ADDED]"
-    orcid: "[TO BE ADDED]"
-repository-code: "[TO BE ADDED AFTER GITHUB CREATION]"
-url: "[TO BE ADDED]"
-abstract: "Machine learning model for predicting optical rotation sign in chiral fused-ring molecules using structure-solvent grouped validation."
-keywords:
-  - optical rotation
-  - chirality
-  - machine learning
-  - CatBoost
-  - molecular property prediction
-license: "[TO BE SELECTED BY AUTHOR]"
-preferred-citation:
-  type: article
-  authors:
-    - family-names: "[TO BE ADDED]"
-      given-names: "[TO BE ADDED]"
-  title: "[MANUSCRIPT TITLE]"
-  journal: "Journal of Chemical Information and Modeling"
-  year: 2026
-  doi: "[TO BE ASSIGNED AFTER PUBLICATION]"
+  - family-names: Li
+    given-names: Yixuan
+repository-code: "https://github.com/liyixuan-code/ChiralOR"
+version: "1.1.0"

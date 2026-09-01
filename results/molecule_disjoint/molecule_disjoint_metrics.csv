@@ -1,0 +1,12 @@
+﻿metric,reported_value,n,validation_protocol,grouping_unit,source_location
+ROC-AUC,0.9264,5204,5-fold molecule-disjoint grouped OOF,canonical SMILES,SI Table S5
+Average Precision,0.9033,5204,5-fold molecule-disjoint grouped OOF,canonical SMILES,SI Table S5
+Accuracy,0.8561,5204,5-fold molecule-disjoint grouped OOF,canonical SMILES,SI Table S5
+Balanced Accuracy,0.8442,5204,5-fold molecule-disjoint grouped OOF,canonical SMILES,SI Table S5
+Sensitivity,0.7867,5204,5-fold molecule-disjoint grouped OOF,canonical SMILES,SI Table S5
+Specificity,0.9016,5204,5-fold molecule-disjoint grouped OOF,canonical SMILES,SI Table S5
+Precision,0.8401,5204,5-fold molecule-disjoint grouped OOF,canonical SMILES,SI Table S5
+NPV,0.8655,5204,5-fold molecule-disjoint grouped OOF,canonical SMILES,SI Table S5
+F1,0.8125,5204,5-fold molecule-disjoint grouped OOF,canonical SMILES,SI Table S5
+MCC,0.6969,5204,5-fold molecule-disjoint grouped OOF,canonical SMILES,SI Table S5
+Brier score,0.1035,5204,5-fold molecule-disjoint grouped OOF,canonical SMILES,SI Table S5

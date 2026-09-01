@@ -1,0 +1,12 @@
+﻿item,value,unit_or_text,source_location
+number_of_classes,41,,SI S2 / Table S1
+observations_assigned,5204,,SI Table S1
+OR_plus_total_across_classes,2063,,SI Table S1
+OR_minus_total_across_classes,3141,,SI Table S1
+minimum_directional_consistency_percent,50.0,%,SI Table S1 / Main 3.1
+maximum_directional_consistency_percent,100.0,%,SI Table S1 / Main 3.1
+classes_at_or_above_90_percent,14,classes,Main 3.1
+classes_with_n_at_least_10,24,classes,Main 3.1
+classes_with_n_at_least_10_and_consistency_at_least_90_percent,4,classes,Main 3.1
+rule_definition_uses_OR_label,,No,SI S2 / Main Methods 2.2
+used_as_direct_primary_model_input,,No,SI S2 / Main Results 3.1

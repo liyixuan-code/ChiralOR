@@ -1,0 +1,14 @@
+﻿analysis_scope,item,numeric_value,value_text,notes,source_location
+historical_visualization_subset,n,128,,pre-existing interaction subset,SI S8.2
+historical_visualization_subset,sampling_procedure,,NOT_RECOVERABLE,sampling script was not retained,SI S8.2
+sensitivity_analysis,number_of_subsets,5,,prespecified balanced subsets,SI S8.2
+sensitivity_analysis,observations_per_subset,128,,fold- and class-stratified balanced subsets,SI S8.2
+sensitivity_analysis,seeds,,101;202;303;404;505,,SI S8.2
+sensitivity_analysis,mean_Spearman_rank_correlation,0.852,,pairwise-interaction ranking stability,SI S8.2
+tier_definition,Tier A,,top-10 rank in at least 4 of 5 subsets,,SI S8.2
+tier_definition,Tier B,,top-20 rank in at least 3 subsets without satisfying Tier A,,SI S8.2
+key_pair,MACCS-129 × signed substituent–ring dihedral,,rank 1 in all five sensitivity subsets,strongest off-diagonal pair in historical visualization subset,Main 3.5.2 / Figure 5
+network_node_scope,global OOF mean|SHAP|,5204,observations,node size/fill,SI Figure S6
+network_edge_scope,mean absolute off-diagonal SHAP interaction,128,observations,historical visualization subset; edge width/color,SI Figure S6
+Figure_S7_panel_tiers,Tier A panels,,A–G and I,,SI Figure S7
+Figure_S7_panel_tiers,Tier B panels,,H and J,,SI Figure S7

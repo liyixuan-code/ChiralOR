@@ -1,4 +1,4 @@
-feature,mean_abs_shap,mean_shap,rank,percentage
+﻿feature_name,mean_abs_shap,mean_shap,rank,percentage_total_abs_shap
 geo:signed_tetra_volume,0.4057692347794016,-0.0033376577262444434,1,6.071169021240617
 ECFP_1412,0.2121232087242473,0.07402564663806713,2,3.1738134464357457
 geo:signed_dihedral_subst_c_rn1_rn2,0.15214217150857007,-0.00017795860852601284,3,2.2763698164284705
