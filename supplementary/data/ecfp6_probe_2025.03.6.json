@@ -1,0 +1,12 @@
+{
+  "rdkit_version": "2025.03.6",
+  "python": "C:\\Users\\lenovo\\.conda\\envs\\my-rdkit-env\\python.exe",
+  "n_checked": 5204,
+  "n_exact": 5204,
+  "n_drift": 0,
+  "frac_drift": 0.0,
+  "mean_bits_diff": 0.0,
+  "max_bits_diff": 0,
+  "perfect_match": true,
+  "worst_examples": []
+}

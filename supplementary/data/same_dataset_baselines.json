@@ -1,0 +1,109 @@
+{
+  "protocol": {
+    "folds": "primary_grouped_fold_assignments_public.csv (published folds, used as-is)",
+    "note": "earlier benchmark regenerated folds and matched only ~20% of these; this run supersedes it for fold-identical comparison",
+    "model": "RandomForest (500 trees, class_weight=balanced, seed 42); CatBoost reference values taken from the frozen models",
+    "target": "OR sign (OR+ = 1)"
+  },
+  "results": {
+    "M1_PAS_only": {
+      "n": 5204,
+      "oof_auc": 0.6268076136559874,
+      "oof_ap": 0.5387600492095879,
+      "oof_mcc": 0.14674376318238982,
+      "oof_brier": 0.2628223022986096,
+      "balanced_accuracy": 0.5747397753940928,
+      "accuracy": 0.580130668716372,
+      "name": "M1_PAS_only",
+      "algorithm": "RF",
+      "n_features": 20,
+      "elapsed_s": 8.7
+    },
+    "M2_PAS_plus_sPAS": {
+      "n": 5204,
+      "oof_auc": 0.6197389675091356,
+      "oof_ap": 0.5288361804194411,
+      "oof_mcc": 0.13883105278816266,
+      "oof_brier": 0.27539499877460893,
+      "balanced_accuracy": 0.5707529750151352,
+      "accuracy": 0.5755188316679477,
+      "name": "M2_PAS_plus_sPAS",
+      "algorithm": "RF",
+      "n_features": 40,
+      "elapsed_s": 10.4
+    },
+    "M3_Mamede_inspired": {
+      "n": 5204,
+      "oof_auc": 0.9015175891293098,
+      "oof_ap": 0.8550206038829105,
+      "oof_mcc": 0.6312158723136208,
+      "oof_brier": 0.12591082947840046,
+      "balanced_accuracy": 0.8188664826201337,
+      "accuracy": 0.8209069946195234,
+      "name": "M3_Mamede_inspired",
+      "algorithm": "RF",
+      "n_features": 49,
+      "elapsed_s": 10.5
+    },
+    "M4_Baseline_2276": {
+      "n": 5204,
+      "oof_auc": 0.9134306128675471,
+      "oof_ap": 0.8792381546884319,
+      "oof_mcc": 0.6324751263895624,
+      "oof_brier": 0.12152963068781344,
+      "balanced_accuracy": 0.8189897873156042,
+      "accuracy": 0.8220599538816296,
+      "name": "M4_Baseline_2276",
+      "algorithm": "RF",
+      "n_features": 2276,
+      "elapsed_s": 22.3
+    },
+    "M5_Full_2283": {
+      "n": 5204,
+      "oof_auc": 0.9260485104437841,
+      "oof_ap": 0.898169052057222,
+      "oof_mcc": 0.67549905512708,
+      "oof_brier": 0.11412397383580988,
+      "balanced_accuracy": 0.8402432574785688,
+      "accuracy": 0.8431975403535742,
+      "name": "M5_Full_2283",
+      "algorithm": "RF",
+      "n_features": 2283,
+      "elapsed_s": 21.0
+    }
+  },
+  "catboost_reference": {
+    "M4_Baseline_2276": 0.9169959550195581,
+    "M5_Full_2283": 0.9278324161099823
+  },
+  "mamede_note": "Mamede et al. JCIM 2021, 61, 4370-4379 report RF/ANN on chiral-labelled hand-crafted descriptors (accuracy ~0.75 on an independent set). Original descriptors and code are not public; M3 reconstructs the published description (stereocenter + 4 substituent fragments x 9 physicochemical properties + chiral label + context) and is therefore labelled 'inspired', not a replication.",
+  "elapsed_total_s": 88.8,
+  "catboost_same_folds": {
+    "M2_PAS_plus_sPAS": {
+      "n_features": 40,
+      "oof_auc": 0.6517,
+      "balanced_accuracy": 0.5726,
+      "accuracy": 0.6042
+    },
+    "M3_Mamede_inspired": {
+      "n_features": 49,
+      "oof_auc": 0.8933,
+      "balanced_accuracy": 0.8132,
+      "accuracy": 0.824,
+      "mcc": 0.63
+    },
+    "M4_Baseline_2276": {
+      "n_features": 2276,
+      "oof_auc": 0.917,
+      "balanced_accuracy": 0.8323,
+      "accuracy": 0.843
+    },
+    "M5_Full_2283": {
+      "n_features": 2283,
+      "oof_auc": 0.9278,
+      "balanced_accuracy": 0.8495,
+      "accuracy": 0.8599
+    },
+    "_note": "trained by this package on published folds (5-fold, 288 iters/depth 8/lr 0.1); M4/M5 match the published frozen-model OOF exactly"
+  }
+}

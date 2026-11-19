@@ -1,0 +1,91 @@
+{
+  "rdkit_version": "2022.09.5",
+  "n_rows": 5204,
+  "block_importance": {
+    "ecfp6": 0.49102895876236013,
+    "maccs": 0.07196126007458019,
+    "rdkit2d": 0.04008166579902839,
+    "spas": 0.05378784269454848,
+    "pas": 0.053726540858525094,
+    "shape3d": 0.07469290306600442,
+    "solvent_code": 0.009952846444359424,
+    "dihedral": 0.018543203607654667,
+    "pm_code": 0.003022777257643964,
+    "geometry": 0.18320200143529522
+  },
+  "variants": {
+    "baseline": {
+      "mean_abs_dp": 0.0,
+      "p95_abs_dp": 0.0,
+      "max_abs_dp": 0.0,
+      "spearman_vs_baseline": 1.0,
+      "n_class_flips": 0,
+      "auc": 0.9999395822424572
+    },
+    "shape3d_zero": {
+      "mean_abs_dp": 0.0721047402002075,
+      "p95_abs_dp": 0.23206879315613393,
+      "max_abs_dp": 0.6006340576648822,
+      "spearman_vs_baseline": 0.9605004876239048,
+      "n_class_flips": 133,
+      "auc": 0.997184439904239
+    },
+    "shape3d_shuffle": {
+      "mean_abs_dp": 0.04202085008128268,
+      "p95_abs_dp": 0.16312139663174682,
+      "max_abs_dp": 0.6420262693448346,
+      "spearman_vs_baseline": 0.9693892436694648,
+      "n_class_flips": 101,
+      "auc": 0.997884221057695
+    },
+    "geometry_zero": {
+      "mean_abs_dp": 0.10179455596200512,
+      "p95_abs_dp": 0.331208946334679,
+      "max_abs_dp": 0.6197419635948848,
+      "spearman_vs_baseline": 0.8858629588343979,
+      "n_class_flips": 162,
+      "auc": 0.9961507792656132
+    },
+    "geometry_shuffle": {
+      "mean_abs_dp": 0.12929611841299965,
+      "p95_abs_dp": 0.5001657216820089,
+      "max_abs_dp": 0.9594903653663758,
+      "spearman_vs_baseline": 0.8249476434376288,
+      "n_class_flips": 456,
+      "auc": 0.962285584477374
+    },
+    "tail_zero": {
+      "mean_abs_dp": 0.17290313912430147,
+      "p95_abs_dp": 0.4300791776238049,
+      "max_abs_dp": 0.677646162252973,
+      "spearman_vs_baseline": 0.8757703637045459,
+      "n_class_flips": 461,
+      "auc": 0.983753796171937
+    },
+    "tail_shuffle": {
+      "mean_abs_dp": 0.1617440273442266,
+      "p95_abs_dp": 0.5330060835389875,
+      "max_abs_dp": 0.9626881656331844,
+      "spearman_vs_baseline": 0.7932057882821567,
+      "n_class_flips": 625,
+      "auc": 0.9437451262623106
+    },
+    "recomputed_rdkit_2022.09.5": {
+      "mean_abs_dp": 0.03963399966947331,
+      "p95_abs_dp": 0.21779517906786197,
+      "max_abs_dp": 0.5678112335689317,
+      "spearman_vs_baseline": 0.9684535397652143,
+      "n_class_flips": 98,
+      "auc": 0.9983083799506873
+    },
+    "realistic_external": {
+      "mean_abs_dp": 0.20850987492576936,
+      "p95_abs_dp": 0.6501401043779279,
+      "max_abs_dp": 0.9712027670153205,
+      "spearman_vs_baseline": 0.7190063634174265,
+      "n_class_flips": 1013,
+      "auc": 0.8879035315915427
+    }
+  },
+  "note": "AUC is computed on training labels and is therefore optimistic in absolute terms; it is comparable across variants. realistic_external = current-RDKit chemistry blocks + shuffled shape3d/geometry (stand-in for unreproducible tail)."
+}

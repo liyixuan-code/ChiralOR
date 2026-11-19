@@ -1,0 +1,37 @@
+{
+  "baseline": "OHECC-inspired (Zhou et al. JCIM 2025, 65, 4281)",
+  "n_evaluated": 5204,
+  "n_features": 840,
+  "padding_atoms": 60,
+  "oof_auc": 0.60986911337751,
+  "oof_ap": null,
+  "balanced_accuracy": 0.5327137079481219,
+  "accuracy": 0.5739815526518063,
+  "mcc": 0.07024704478086082,
+  "brier": 0.22604667090709363,
+  "model": "RandomForest 1800 trees, class_weight balanced, seed 42",
+  "folds": "published primary grouped folds, fold-own-model",
+  "caveats": [
+    "OHECC-INSPIRED: original vector is a 27-atom zero-padded flatten of DFT (B3LYP/6-31G**) geometry; ours uses ETKDGv3+MMFF94s and pads to 60 atoms to fit our larger molecules.",
+    "Element vocabulary extended beyond (H,C,N,O,F).",
+    "Zhou 2025 evaluated DFT optical rotations of QM9 molecules; numbers are not comparable across datasets."
+  ],
+  "atom_ordering_sensitivity": {
+    "smiles_order": {
+      "auc": 0.6099,
+      "accuracy": 0.574,
+      "balanced_accuracy": 0.5327
+    },
+    "canonical_rank_order": {
+      "auc": 0.5836,
+      "accuracy": 0.5651,
+      "balanced_accuracy": 0.5181
+    },
+    "geometry_sorted_order_best": {
+      "auc": 0.6308,
+      "accuracy": 0.6018,
+      "balanced_accuracy": 0.5555
+    }
+  },
+  "interpretation": "OHECC is an order-dependent serialisation of a 3D geometry; on our data the result swings between AUC 0.58 and 0.63 depending solely on atom ordering, so the fair reading is 'AUC ~0.63 best case'. Its original setting was DFT geometries of QM9-scale molecules (<=9 heavy atoms); our molecules are larger (padding 60 atoms vs 27) and use ETKDG/MMFF geometries, so this reimplementation is a lower bound on what the original representation achieves, not a replication."
+}

@@ -1,0 +1,202 @@
+{
+  "gate_version": 4,
+  "mode": "relaxed",
+  "claim_level": "approximate_validation",
+  "rdkit_version": "2025.03.6",
+  "python": "C:\\Users\\lenovo\\.conda\\envs\\my-rdkit-env\\python.exe",
+  "n_verified": 200,
+  "n_build_failures": 0,
+  "n_integrity_failures": 0,
+  "block_summary": {
+    "ecfp6": {
+      "status": "PASS",
+      "n_rows_with_drift": 0,
+      "n_rows": 200,
+      "max_bit_diff": 0,
+      "max_bit_diff_frac": 0.0,
+      "tolerance_frac": 0.02,
+      "note": "bit-exact under RDKit 2025.03.6; other versions drift in Morgan hashing"
+    },
+    "maccs": {
+      "status": "PASS",
+      "n_rows_mismatched": 0,
+      "n_rows": 200
+    },
+    "rdkit2d": {
+      "status": "TOLERATED_DRIFT",
+      "n_rows_integer_mismatch": 8,
+      "n_rows_float_outside_1e-5": 0,
+      "mismatched_integer_column_counts": {
+        "3": 8
+      },
+      "n_rows": 200,
+      "column_order": [
+        "MolWt",
+        "MolLogP",
+        "TPSA",
+        "NumHAcceptors",
+        "NumHDonors",
+        "NumRotBonds",
+        "RingCount",
+        "NumAromRings"
+      ],
+      "note": "NumHAcceptors differs on a minority of rows under every RDKit released for Python 3.9 (2022.03.5 / 2022.09.5 / 2025.03.6 identical); frozen column came from an older acceptor definition. 1 of 8 columns; block importance 4%."
+    },
+    "spas": {
+      "status": "PASS",
+      "max_rel_diff": 0.0
+    },
+    "pas": {
+      "status": "PASS",
+      "max_rel_diff": 0.0
+    },
+    "shape3d": {
+      "status": "UNREPRODUCIBLE",
+      "max_rel_diff": 2.335838713819206,
+      "note": "legacy v13 conformer cache is not in the public release; regenerated values are used and flagged per row (block importance 7.5%)"
+    },
+    "solvent_code": {
+      "status": "PASS",
+      "n_rows_mismatched": 0,
+      "n_rows": 200
+    },
+    "dihedral": {
+      "status": "PASS",
+      "exact_match_frac": 1.0,
+      "n_rows": 200,
+      "note": "true values supplied in this run; external rows use the declared dihedral source"
+    },
+    "pm_code": {
+      "status": "PASS",
+      "exact_match_frac": 1.0,
+      "n_rows": 200,
+      "note": "true values supplied in this run; external rows use the declared dihedral source"
+    },
+    "geometry": {
+      "status": "TOLERATED_DRIFT",
+      "n_rows_dihedral_cols_not_exact": 0,
+      "n_rows_conformer_cols_exact": 8,
+      "n_rows": 200,
+      "nan_generated": 0,
+      "max_rel_diff": 441.0144140650016,
+      "conformer_max_rel": 441.0144140650016,
+      "note": "dihedral-derived cols 2281/2282 are exact given the supplied dihedral; conformer-derived cols 2276-2280 reproduce under RDKit 2022.09.5, not 2025.03.6"
+    }
+  },
+  "failing_blocks": [],
+  "tolerated_blocks": [
+    "geometry",
+    "rdkit2d",
+    "shape3d"
+  ],
+  "reproducible_blocks_pass": true,
+  "gate_status": "PASS",
+  "dihedral_source_for_external": "derived_approximate",
+  "external_inference_allowed": true,
+  "blocked_reason": null,
+  "drift_impact": {
+    "available": true,
+    "rdkit_version_tested": "2022.09.5",
+    "block_importance": {
+      "ecfp6": 0.49102895876236013,
+      "maccs": 0.07196126007458019,
+      "rdkit2d": 0.04008166579902839,
+      "spas": 0.05378784269454848,
+      "pas": 0.053726540858525094,
+      "shape3d": 0.07469290306600442,
+      "solvent_code": 0.009952846444359424,
+      "dihedral": 0.018543203607654667,
+      "pm_code": 0.003022777257643964,
+      "geometry": 0.18320200143529522
+    },
+    "variants": {
+      "baseline": {
+        "mean_abs_dp": 0.0,
+        "p95_abs_dp": 0.0,
+        "max_abs_dp": 0.0,
+        "spearman_vs_baseline": 1.0,
+        "n_class_flips": 0,
+        "auc": 0.9999395822424572
+      },
+      "shape3d_zero": {
+        "mean_abs_dp": 0.0721047402002075,
+        "p95_abs_dp": 0.23206879315613393,
+        "max_abs_dp": 0.6006340576648822,
+        "spearman_vs_baseline": 0.9605004876239048,
+        "n_class_flips": 133,
+        "auc": 0.997184439904239
+      },
+      "shape3d_shuffle": {
+        "mean_abs_dp": 0.04202085008128268,
+        "p95_abs_dp": 0.16312139663174682,
+        "max_abs_dp": 0.6420262693448346,
+        "spearman_vs_baseline": 0.9693892436694648,
+        "n_class_flips": 101,
+        "auc": 0.997884221057695
+      },
+      "geometry_zero": {
+        "mean_abs_dp": 0.10179455596200512,
+        "p95_abs_dp": 0.331208946334679,
+        "max_abs_dp": 0.6197419635948848,
+        "spearman_vs_baseline": 0.8858629588343979,
+        "n_class_flips": 162,
+        "auc": 0.9961507792656132
+      },
+      "geometry_shuffle": {
+        "mean_abs_dp": 0.12929611841299965,
+        "p95_abs_dp": 0.5001657216820089,
+        "max_abs_dp": 0.9594903653663758,
+        "spearman_vs_baseline": 0.8249476434376288,
+        "n_class_flips": 456,
+        "auc": 0.962285584477374
+      },
+      "tail_zero": {
+        "mean_abs_dp": 0.17290313912430147,
+        "p95_abs_dp": 0.4300791776238049,
+        "max_abs_dp": 0.677646162252973,
+        "spearman_vs_baseline": 0.8757703637045459,
+        "n_class_flips": 461,
+        "auc": 0.983753796171937
+      },
+      "tail_shuffle": {
+        "mean_abs_dp": 0.1617440273442266,
+        "p95_abs_dp": 0.5330060835389875,
+        "max_abs_dp": 0.9626881656331844,
+        "spearman_vs_baseline": 0.7932057882821567,
+        "n_class_flips": 625,
+        "auc": 0.9437451262623106
+      },
+      "recomputed_rdkit_2022.09.5": {
+        "mean_abs_dp": 0.03963399966947331,
+        "p95_abs_dp": 0.21779517906786197,
+        "max_abs_dp": 0.5678112335689317,
+        "spearman_vs_baseline": 0.9684535397652143,
+        "n_class_flips": 98,
+        "auc": 0.9983083799506873
+      },
+      "realistic_external": {
+        "mean_abs_dp": 0.20850987492576936,
+        "p95_abs_dp": 0.6501401043779279,
+        "max_abs_dp": 0.9712027670153205,
+        "spearman_vs_baseline": 0.7190063634174265,
+        "n_class_flips": 1013,
+        "auc": 0.8879035315915427
+      }
+    },
+    "source": "results/drift_impact_*.json"
+  },
+  "reference_matrix": {
+    "path": "C:\\Users\\lenovo\\.claude\\projects\\PM\\ChiralOR_External_Validation_V1_Remote\\data\\original_training\\X_C3_5204x2283.npy",
+    "shape": [
+      5204,
+      2283
+    ],
+    "nan_in_full_matrix": null
+  },
+  "limitations": [
+    "3D-shape columns in the frozen matrix came from a legacy v13 conformer cache that is not part of the public release; regenerating them from ETKDGv3 gives different values.",
+    "Baseline dihedral and P/M code for new molecules are unrecoverable: the training set holds 85 expert sign flips with no encoded rule.",
+    "Signed geometry reproduces exactly only when the true dihedral is supplied.",
+    "The training matrix is mixed-RDKit: ECFP6 bits match RDKit 2025.03.6 (5204/5204 rows exact) while ETKDGv3 geometry matches 2022.09.5. See FEATURE_REPRODUCTION_FINDINGS.md."
+  ]
+}

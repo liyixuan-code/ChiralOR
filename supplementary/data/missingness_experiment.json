@@ -1,0 +1,48 @@
+{
+  "zero_rates": {
+    "signed_tetra_volume": 0.0,
+    "subst_to_ringplane_signed_dist": 0.0,
+    "ringnormal_dot_substvec": 0.0,
+    "signed_dihedral_subst_c_rn1_rn2": 0.0,
+    "signed_dihedral_NS_path": 0.3920061491160646,
+    "baseline_pm_dihedral_sin": 0.0,
+    "baseline_pm_dihedral_cos": 0.0
+  },
+  "results": {
+    "A_zerofill_baseline": {
+      "tag": "A. zero-fill (current pipeline)",
+      "auc": 0.9278324161099823,
+      "acc": 0.8599154496541123,
+      "ba": 0.8495174218423388,
+      "mcc": 0.7054060160632276
+    },
+    "B_median_impute": {
+      "tag": "B. train-fold median impute (zeros->median)",
+      "auc": 0.9278324161099823,
+      "acc": 0.8599154496541123,
+      "ba": 0.8495174218423388,
+      "mcc": 0.7054060160632276
+    },
+    "C_zerofill_plus_indicators7": {
+      "tag": "C. zero-fill + 7 missing indicators",
+      "auc": 0.9262928821400016,
+      "acc": 0.8583781706379708,
+      "ba": 0.8471625953740214,
+      "mcc": 0.701939280784461
+    },
+    "D_median_plus_indicators": {
+      "tag": "D. median impute + indicators",
+      "auc": 0.9262928821400016,
+      "acc": 0.8583781706379708,
+      "ba": 0.8471625953740214,
+      "mcc": 0.701939280784461
+    },
+    "E_drop_col2280": {
+      "tag": "E. drop col 2280 (NS-path)",
+      "auc": 0.924355038509183,
+      "acc": 0.8566487317448117,
+      "ba": 0.845314028046494,
+      "mcc": 0.6982739111727461
+    }
+  }
+}

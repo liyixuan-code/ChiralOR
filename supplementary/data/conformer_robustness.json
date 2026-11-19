@@ -1,0 +1,223 @@
+{
+  "protocol": {
+    "seeds": [
+      42,
+      123,
+      999
+    ],
+    "conformer": "ETKDGv3 + MMFF94s, seed incremented per attempt (<=10)",
+    "spliced_columns": "shape3d 2263-2272; geometry 2276-2280 (2281/2282 are sin/cos of the stored dihedral, seed-invariant)",
+    "evaluation": "published grouped folds; frozen fold-own models AND identically retrained CatBoost (288/8/0.1)"
+  },
+  "reference_frozen_matrix": {
+    "tag": "frozen_X",
+    "oof_auc": 0.9278324161099823,
+    "balanced_accuracy": 0.8495174218423388,
+    "accuracy": 0.8599154496541123
+  },
+  "per_seed": {
+    "42": {
+      "frozen_model": {
+        "tag": "seed42_frozen_model",
+        "oof_auc": 0.9292738001596634,
+        "balanced_accuracy": 0.8485192556717459,
+        "accuracy": 0.8599154496541123
+      },
+      "retrained": {
+        "tag": "seed42_retrained",
+        "oof_auc": 0.9281710024702607,
+        "balanced_accuracy": 0.8457987590208033,
+        "accuracy": 0.857033051498847
+      },
+      "mean_abs_dp_vs_seed42": 0.02823886166223756,
+      "p95_abs_dp_vs_seed42": 0.12149059038324732,
+      "class_flips_vs_seed42": 130,
+      "class_flip_rate": 0.02498078401229823,
+      "embed_failures": 0,
+      "elapsed_min": 3.8
+    },
+    "123": {
+      "frozen_model": {
+        "tag": "seed123_frozen_model",
+        "oof_auc": 0.9268844051659575,
+        "balanced_accuracy": 0.84489094941992,
+        "accuracy": 0.8568408916218294
+      },
+      "retrained": {
+        "tag": "seed123_retrained",
+        "oof_auc": 0.9278899788777051,
+        "balanced_accuracy": 0.8423152856309288,
+        "accuracy": 0.8545349730976172
+      },
+      "mean_abs_dp_vs_seed42": 0.0394953237340747,
+      "p95_abs_dp_vs_seed42": 0.16905529780305018,
+      "class_flips_vs_seed42": 188,
+      "class_flip_rate": 0.0361260568793236,
+      "embed_failures": 0,
+      "elapsed_min": 3.3
+    },
+    "999": {
+      "frozen_model": {
+        "tag": "seed999_frozen_model",
+        "oof_auc": 0.9277385872553563,
+        "balanced_accuracy": 0.8471554193185278,
+        "accuracy": 0.8585703305149884
+      },
+      "retrained": {
+        "tag": "seed999_retrained",
+        "oof_auc": 0.9284315010008669,
+        "balanced_accuracy": 0.8505844164161607,
+        "accuracy": 0.8602997694081476
+      },
+      "mean_abs_dp_vs_seed42": 0.037062816475300825,
+      "p95_abs_dp_vs_seed42": 0.15879156156036012,
+      "class_flips_vs_seed42": 179,
+      "class_flip_rate": 0.03439661798616449,
+      "embed_failures": 0,
+      "elapsed_min": 4.1
+    }
+  },
+  "auc_spread_frozen_model": {
+    "min": 0.9268844051659575,
+    "max": 0.9292738001596634,
+    "sd": 0.0012107651946426186
+  },
+  "auc_spread_retrained": {
+    "min": 0.9278899788777051,
+    "max": 0.9284315010008669,
+    "sd": 0.00027082588314713706
+  },
+  "shape3d_cross_seed": {
+    "PMI1": {
+      "mean_cross_seed_sd": 123.48170907538669,
+      "median_cross_seed_sd": 65.59338858012148,
+      "p95_cross_seed_sd": 455.1303774488389,
+      "feature_sd_across_molecules": 867.4707352072714,
+      "relative_sd": 0.14234682977043844
+    },
+    "PMI2": {
+      "mean_cross_seed_sd": 365.17636561141484,
+      "median_cross_seed_sd": 172.32043588345005,
+      "p95_cross_seed_sd": 1380.4540082372093,
+      "feature_sd_across_molecules": 2989.096155861035,
+      "relative_sd": 0.12216949424506636
+    },
+    "PMI3": {
+      "mean_cross_seed_sd": 364.68740536506834,
+      "median_cross_seed_sd": 192.20665086180966,
+      "p95_cross_seed_sd": 1271.2259368187413,
+      "feature_sd_across_molecules": 3216.2349174099904,
+      "relative_sd": 0.11338954234684705
+    },
+    "NPR1": {
+      "mean_cross_seed_sd": 0.039564541128078085,
+      "median_cross_seed_sd": 0.029110114418431098,
+      "p95_cross_seed_sd": 0.12440929467075153,
+      "feature_sd_across_molecules": 0.1219947879612999,
+      "relative_sd": 0.32431337263608945
+    },
+    "NPR2": {
+      "mean_cross_seed_sd": 0.024418409744707124,
+      "median_cross_seed_sd": 0.017693321326332945,
+      "p95_cross_seed_sd": 0.07798164879310104,
+      "feature_sd_across_molecules": 0.08393872783080665,
+      "relative_sd": 0.29090755096545945
+    },
+    "RadiusOfGyration": {
+      "mean_cross_seed_sd": 0.10991957140583028,
+      "median_cross_seed_sd": 0.07417445326973232,
+      "p95_cross_seed_sd": 0.3135011167757341,
+      "feature_sd_across_molecules": 0.7491927579011733,
+      "relative_sd": 0.14671734376292936
+    },
+    "InertialShapeFactor": {
+      "mean_cross_seed_sd": 0.00014765835517623315,
+      "median_cross_seed_sd": 8.575309887579686e-05,
+      "p95_cross_seed_sd": 0.0005135466840745925,
+      "feature_sd_across_molecules": 0.0009756377349080893,
+      "relative_sd": 0.15134547357252223
+    },
+    "Eccentricity": {
+      "mean_cross_seed_sd": 0.012164004450748004,
+      "median_cross_seed_sd": 0.006234017231758801,
+      "p95_cross_seed_sd": 0.046122303970745786,
+      "feature_sd_across_molecules": 0.04204962355179522,
+      "relative_sd": 0.28927736857086345
+    },
+    "Asphericity": {
+      "mean_cross_seed_sd": 0.05998957045168641,
+      "median_cross_seed_sd": 0.045280345004790806,
+      "p95_cross_seed_sd": 0.1771878919256597,
+      "feature_sd_across_molecules": 0.17831995993147562,
+      "relative_sd": 0.3364153428163771
+    },
+    "SpherocityIndex": {
+      "mean_cross_seed_sd": 0.05658012470313112,
+      "median_cross_seed_sd": 0.04145251825739806,
+      "p95_cross_seed_sd": 0.1729778627542258,
+      "feature_sd_across_molecules": 0.10820823872376902,
+      "relative_sd": 0.5228818560391173
+    }
+  },
+  "geometry_cross_seed": {
+    "signed_tetra_volume": {
+      "mean_cross_seed_sd": 0.004917069370280437,
+      "median_cross_seed_sd": 0.0032530907404304714,
+      "p95_cross_seed_sd": 0.015052124194309182,
+      "feature_sd_across_molecules": 1.3950071488035625,
+      "relative_sd": 0.0035247628476270322
+    },
+    "subst_to_ringplane_signed_dist": {
+      "mean_cross_seed_sd": 0.6150482943457729,
+      "median_cross_seed_sd": 0.7223561078458519,
+      "p95_cross_seed_sd": 1.5371019857622559,
+      "feature_sd_across_molecules": 0.9207251810830359,
+      "relative_sd": 0.6680042068813979
+    },
+    "ringnormal_dot_substvec": {
+      "mean_cross_seed_sd": 0.3854845055373824,
+      "median_cross_seed_sd": 0.42567924288534675,
+      "p95_cross_seed_sd": 0.9005245495620958,
+      "feature_sd_across_molecules": 0.5369004304556972,
+      "relative_sd": 0.7179813679968227
+    },
+    "signed_dihedral_subst_c_rn1_rn2": {
+      "mean_cross_seed_sd": 1.8648688413022403,
+      "median_cross_seed_sd": 1.3880136701227797,
+      "p95_cross_seed_sd": 5.438552342814697,
+      "feature_sd_across_molecules": 124.16935583396281,
+      "relative_sd": 0.01501875264454055
+    },
+    "signed_dihedral_NS_path": {
+      "mean_cross_seed_sd": 10.106602953383385,
+      "median_cross_seed_sd": 0.029934378100612127,
+      "p95_cross_seed_sd": 70.16627162047918,
+      "feature_sd_across_molecules": 92.74876016539895,
+      "relative_sd": 0.10896752620045985
+    },
+    "baseline_pm_dihedral_sin": {
+      "mean_cross_seed_sd": 2.0593942933265598e-17,
+      "median_cross_seed_sd": 0.0,
+      "p95_cross_seed_sd": 1.3597399555105182e-16,
+      "feature_sd_across_molecules": 0.6865504063830672,
+      "relative_sd": 2.999625772815437e-17
+    },
+    "baseline_pm_dihedral_cos": {
+      "mean_cross_seed_sd": 2.151049036076161e-17,
+      "median_cross_seed_sd": 0.0,
+      "p95_cross_seed_sd": 1.3597399555105182e-16,
+      "feature_sd_across_molecules": 0.3559150721332205,
+      "relative_sd": 6.04371437033431e-17
+    }
+  },
+  "missingness": {
+    "zero_rate_col2280": 0.3920061491160646,
+    "retrained_with_indicator": {
+      "tag": "with_missing_indicator",
+      "oof_auc": 0.9262928821400016,
+      "balanced_accuracy": 0.8471625953740214,
+      "accuracy": 0.8583781706379708
+    },
+    "delta_auc_vs_reference_retrained": null
+  }
+}

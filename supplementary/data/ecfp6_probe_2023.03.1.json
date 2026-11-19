@@ -1,0 +1,163 @@
+{
+  "rdkit_version": "2023.03.1",
+  "python": "C:\\temp\\rdkit2023\\Scripts\\python.exe",
+  "n_checked": 5204,
+  "n_exact": 2959,
+  "n_drift": 2245,
+  "frac_drift": 0.4313989239046887,
+  "mean_bits_diff": 22.751002227171494,
+  "max_bits_diff": 29,
+  "perfect_match": false,
+  "worst_examples": [
+    {
+      "idx": 4274,
+      "n_diff": 29,
+      "smiles": "COC(=O)N1c2ccccc2-c2c(F)cccc2[C@H]1c1cccc(F)c1"
+    },
+    {
+      "idx": 3335,
+      "n_diff": 28,
+      "smiles": "Cc1ccc(O)c([C@@H]2Nc3ccccc3-n3cccc32)c1"
+    },
+    {
+      "idx": 95,
+      "n_diff": 26,
+      "smiles": "CCCN(C/C=C/I)[C@@H]1CCc2ccc(O)cc2C1"
+    },
+    {
+      "idx": 0,
+      "n_diff": 25,
+      "smiles": "CCCN(CCc1cccs1)[C@H]1CCc2c(O)cccc2C1"
+    },
+    {
+      "idx": 1,
+      "n_diff": 25,
+      "smiles": "CCCN(CCc1cccs1)[C@H]1CCc2c(O)cccc2C1"
+    },
+    {
+      "idx": 5,
+      "n_diff": 24,
+      "smiles": "CCCN(CCC)[C@@H]1CCc2cccc(O)c2C1"
+    },
+    {
+      "idx": 6,
+      "n_diff": 24,
+      "smiles": "CCCN[C@H]1CCc2c(O)cccc2C1"
+    },
+    {
+      "idx": 7,
+      "n_diff": 24,
+      "smiles": "CCCN[C@H]1CCc2c(O)cccc2C1"
+    },
+    {
+      "idx": 8,
+      "n_diff": 24,
+      "smiles": "CCCN[C@H]1CCc2c(O)cccc2C1"
+    },
+    {
+      "idx": 9,
+      "n_diff": 24,
+      "smiles": "CCCN[C@H]1CCc2c(O)cccc2C1"
+    },
+    {
+      "idx": 10,
+      "n_diff": 24,
+      "smiles": "CCCN[C@H]1CCc2c(O)cccc2C1"
+    },
+    {
+      "idx": 11,
+      "n_diff": 24,
+      "smiles": "CCCN[C@H]1CCc2c(cccc2OC)C1"
+    },
+    {
+      "idx": 12,
+      "n_diff": 24,
+      "smiles": "CCCN[C@H]1CCc2c(cccc2OC)C1"
+    },
+    {
+      "idx": 13,
+      "n_diff": 24,
+      "smiles": "CCCN[C@H]1CCc2c(cccc2OC)C1"
+    },
+    {
+      "idx": 14,
+      "n_diff": 24,
+      "smiles": "CCCN(CCC)[C@H]1CCc2cccc(O)c2C1"
+    },
+    {
+      "idx": 15,
+      "n_diff": 24,
+      "smiles": "CCCN(CCC)[C@H]1CCc2cccc(O)c2C1"
+    },
+    {
+      "idx": 17,
+      "n_diff": 24,
+      "smiles": "Br.CCCN(CCC)[C@@H]1CCc2cccc(O)c2C1"
+    },
+    {
+      "idx": 16,
+      "n_diff": 18,
+      "smiles": "Nc1cccc2c1C[C@H](O)CC2"
+    },
+    {
+      "idx": 18,
+      "n_diff": 18,
+      "smiles": "O[C@@H]1CCc2ccccc2C1"
+    },
+    {
+      "idx": 19,
+      "n_diff": 18,
+      "smiles": "O[C@@H]1CCc2ccccc2C1"
+    },
+    {
+      "idx": 20,
+      "n_diff": 18,
+      "smiles": "O[C@@H]1CCc2ccccc2C1"
+    },
+    {
+      "idx": 21,
+      "n_diff": 18,
+      "smiles": "O[C@@H]1CCc2ccccc2C1"
+    },
+    {
+      "idx": 22,
+      "n_diff": 18,
+      "smiles": "O[C@@H]1CCc2ccccc2C1"
+    },
+    {
+      "idx": 23,
+      "n_diff": 18,
+      "smiles": "O[C@@H]1CCc2ccccc2C1"
+    },
+    {
+      "idx": 24,
+      "n_diff": 18,
+      "smiles": "O[C@@H]1CCc2ccccc2C1"
+    },
+    {
+      "idx": 25,
+      "n_diff": 18,
+      "smiles": "O[C@@H]1CCc2ccccc2C1"
+    },
+    {
+      "idx": 26,
+      "n_diff": 18,
+      "smiles": "O[C@@H]1CCc2ccccc2C1"
+    },
+    {
+      "idx": 27,
+      "n_diff": 18,
+      "smiles": "O[C@@H]1CCc2ccccc2C1"
+    },
+    {
+      "idx": 28,
+      "n_diff": 18,
+      "smiles": "O[C@@H]1CCc2ccccc2C1"
+    },
+    {
+      "idx": 29,
+      "n_diff": 18,
+      "smiles": "O[C@H]1CCc2ccccc2C1"
+    }
+  ]
+}

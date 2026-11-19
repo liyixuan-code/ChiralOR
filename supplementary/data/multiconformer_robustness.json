@@ -1,0 +1,155 @@
+{
+  "sample": {
+    "n_unique_molecules": 500,
+    "n_rows": 613,
+    "n_conformers_requested": 6,
+    "prune_rms": 0.5
+  },
+  "overall_auc": {
+    "single_conformer_frozen": 0.9278324161099823,
+    "multi_mean": 0.9277455318251888,
+    "multi_lowest_energy": 0.9273842598701243
+  },
+  "sampled_rows_auc": {
+    "single_conformer": 0.9183051786208807,
+    "multi_mean": 0.9171761497986921,
+    "multi_lowest_energy": 0.9138529706239482
+  },
+  "delta_p_vs_single": {
+    "multi_mean": {
+      "mean_abs": 0.004477157887227033,
+      "flips": 19
+    },
+    "multi_lowest_energy": {
+      "mean_abs": 0.004388396576762165,
+      "flips": 22
+    }
+  },
+  "within_molecule_conformer_sd": {
+    "shape3d": {
+      "PMI1": {
+        "mean_within_mol_sd": 152.6357574536143,
+        "median_within_mol_sd": 113.85711538648751,
+        "p95_within_mol_sd": 416.48854617285286,
+        "across_molecule_sd": 1028.0207540493263,
+        "relative_sd": 0.14847536574761644,
+        "median_confs": 4.0
+      },
+      "PMI2": {
+        "mean_within_mol_sd": 498.92455342252975,
+        "median_within_mol_sd": 308.2458956955443,
+        "p95_within_mol_sd": 1465.5622893289174,
+        "across_molecule_sd": 3663.682696294587,
+        "relative_sd": 0.13618115835389813,
+        "median_confs": 4.0
+      },
+      "PMI3": {
+        "mean_within_mol_sd": 506.9103605062064,
+        "median_within_mol_sd": 343.6765419183569,
+        "p95_within_mol_sd": 1461.6676781778524,
+        "across_molecule_sd": 3928.7699348481297,
+        "relative_sd": 0.12902520863080302,
+        "median_confs": 4.0
+      },
+      "NPR1": {
+        "mean_within_mol_sd": 0.04908565623492583,
+        "median_within_mol_sd": 0.04178220500068832,
+        "p95_within_mol_sd": 0.12544511381758472,
+        "across_molecule_sd": 0.12532435583936527,
+        "relative_sd": 0.39166892904241046,
+        "median_confs": 4.0
+      },
+      "NPR2": {
+        "mean_within_mol_sd": 0.029392757291372872,
+        "median_within_mol_sd": 0.02353878459759886,
+        "p95_within_mol_sd": 0.07549846549298232,
+        "across_molecule_sd": 0.08187632709443035,
+        "relative_sd": 0.3589896901104804,
+        "median_confs": 4.0
+      },
+      "RadiusOfGyration": {
+        "mean_within_mol_sd": 0.14779158694949895,
+        "median_within_mol_sd": 0.1225515898831757,
+        "p95_within_mol_sd": 0.3599233147013652,
+        "across_molecule_sd": 0.8031560073736566,
+        "relative_sd": 0.18401354854158125,
+        "median_confs": 4.0
+      },
+      "InertialShapeFactor": {
+        "mean_within_mol_sd": 0.00016099445455962613,
+        "median_within_mol_sd": 0.00010758754762768285,
+        "p95_within_mol_sd": 0.0005082722008992915,
+        "across_molecule_sd": 0.000804167473171318,
+        "relative_sd": 0.20020015697044746,
+        "median_confs": 4.0
+      },
+      "Eccentricity": {
+        "mean_within_mol_sd": 0.015350243576043853,
+        "median_within_mol_sd": 0.009503992178198088,
+        "p95_within_mol_sd": 0.04892071832191918,
+        "across_molecule_sd": 0.04305314941924578,
+        "relative_sd": 0.35654171141369245,
+        "median_confs": 4.0
+      },
+      "Asphericity": {
+        "mean_within_mol_sd": 0.07403471126157983,
+        "median_within_mol_sd": 0.06766545269390803,
+        "p95_within_mol_sd": 0.18204699758981718,
+        "across_molecule_sd": 0.18567922034022263,
+        "relative_sd": 0.39872372969644243,
+        "median_confs": 4.0
+      },
+      "SpherocityIndex": {
+        "mean_within_mol_sd": 0.07101267483532041,
+        "median_within_mol_sd": 0.06487270537034387,
+        "p95_within_mol_sd": 0.16086755745242912,
+        "across_molecule_sd": 0.11456114654451187,
+        "relative_sd": 0.6198670053211199,
+        "median_confs": 4.0
+      }
+    },
+    "geometry5": {
+      "signed_tetra_volume": {
+        "mean_within_mol_sd": 0.006227625195842358,
+        "median_within_mol_sd": 0.005260634362348854,
+        "p95_within_mol_sd": 0.016760753112786728,
+        "across_molecule_sd": 1.387307922598403,
+        "relative_sd": 0.004488999950475045,
+        "median_confs": 4.0
+      },
+      "subst_to_ringplane_signed_dist": {
+        "mean_within_mol_sd": 0.7806265684310809,
+        "median_within_mol_sd": 0.8967027340824367,
+        "p95_within_mol_sd": 1.5081388495366732,
+        "across_molecule_sd": 1.0116114743982316,
+        "relative_sd": 0.7716663839688785,
+        "median_confs": 4.0
+      },
+      "ringnormal_dot_substvec": {
+        "mean_within_mol_sd": 0.47601371475216514,
+        "median_within_mol_sd": 0.5404685857304401,
+        "p95_within_mol_sd": 0.8610448434074641,
+        "across_molecule_sd": 0.573658885615997,
+        "relative_sd": 0.8297853074134642,
+        "median_confs": 4.0
+      },
+      "signed_dihedral_subst_c_rn1_rn2": {
+        "mean_within_mol_sd": 2.299322821698277,
+        "median_within_mol_sd": 2.1396913744053254,
+        "p95_within_mol_sd": 5.27774790480538,
+        "across_molecule_sd": 124.32857036433523,
+        "relative_sd": 0.01849392150943481,
+        "median_confs": 4.0
+      },
+      "signed_dihedral_NS_path": {
+        "mean_within_mol_sd": 25.603921204355682,
+        "median_within_mol_sd": 2.7871194445542073,
+        "p95_within_mol_sd": 140.0790634964075,
+        "across_molecule_sd": 118.43345191656665,
+        "relative_sd": 0.2161882541631293,
+        "median_confs": 4.0
+      }
+    }
+  },
+  "note": "cols 2281/2282 are sin/cos of the stored dihedral and are conformer-invariant by construction; the comparison covers the 5 conformer-derived geometry descriptors and the 10 shape3d descriptors."
+}

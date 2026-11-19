@@ -1,0 +1,10 @@
+model,algorithm,n_features,oof_auc,oof_ap,oof_mcc,accuracy,balanced_accuracy
+M1_PAS_only,RF,20,0.6268,0.5388,0.1467,0.5801,0.5747
+M2_PAS_plus_sPAS,RF,40,0.6197,0.5288,0.1388,0.5755,0.5708
+M3_Mamede_inspired,RF,49,0.9015,0.855,0.6312,0.8209,0.8189
+M4_Baseline_2276,RF,2276,0.9134,0.8792,0.6325,0.8221,0.819
+M5_Full_2283,RF,2283,0.926,0.8982,0.6755,0.8432,0.8402
+M2_PAS_plus_sPAS_CB,CatBoost,40,0.6517,,,0.6042,0.5726
+M3_Mamede_inspired_CB,CatBoost,49,0.8933,,,0.824,0.8132
+M4_Baseline_2276_CB,CatBoost,2276,0.917,,,0.843,0.8323
+M5_Full_2283_CB,CatBoost,2283,0.9278,,,0.8599,0.8495

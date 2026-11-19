@@ -1,0 +1,126 @@
+{
+  "protocol": {
+    "folds": "primary_grouped_fold_assignments_public.csv",
+    "oof_rule": "each sample predicted only by its held-out fold model",
+    "reference_published_oof_auc": 0.9278324161099823,
+    "reconstructed_path": "build_vector(allow_derived_dihedral=True), all 2283 dims"
+  },
+  "sanity_recomputed_oof_A_auc": 0.9278324161099823,
+  "reconstructed": {
+    "tag": "reconstructed_all_blocks",
+    "n_valid": 5204,
+    "oof_auc": 0.9263487473462098,
+    "prob_mae": 0.03951861093780768,
+    "prob_p95_abs": 0.17712060314187014,
+    "class_flips": 197,
+    "class_flip_rate": 0.037855495772482706
+  },
+  "block_swap_in": {
+    "ecfp6": {
+      "tag": "swap_in_ecfp6",
+      "n_valid": 5204,
+      "oof_auc": 0.9278324161099823,
+      "prob_mae": 3.7565646879155134e-17,
+      "prob_p95_abs": 1.1102230246251565e-16,
+      "class_flips": 0,
+      "class_flip_rate": 0.0,
+      "delta_oof_auc": 0.0
+    },
+    "maccs": {
+      "tag": "swap_in_maccs",
+      "n_valid": 5204,
+      "oof_auc": 0.9278324161099823,
+      "prob_mae": 3.7565646879155134e-17,
+      "prob_p95_abs": 1.1102230246251565e-16,
+      "class_flips": 0,
+      "class_flip_rate": 0.0,
+      "delta_oof_auc": 0.0
+    },
+    "rdkit2d": {
+      "tag": "swap_in_rdkit2d",
+      "n_valid": 5204,
+      "oof_auc": 0.9278361198805596,
+      "prob_mae": 8.83044538871731e-05,
+      "prob_p95_abs": 1.1102230246251565e-16,
+      "class_flips": 0,
+      "class_flip_rate": 0.0,
+      "delta_oof_auc": 3.7037705772346996e-06
+    },
+    "spas": {
+      "tag": "swap_in_spas",
+      "n_valid": 5204,
+      "oof_auc": 0.9278324161099823,
+      "prob_mae": 3.7565646879155134e-17,
+      "prob_p95_abs": 1.1102230246251565e-16,
+      "class_flips": 0,
+      "class_flip_rate": 0.0,
+      "delta_oof_auc": 0.0
+    },
+    "pas": {
+      "tag": "swap_in_pas",
+      "n_valid": 5204,
+      "oof_auc": 0.9278324161099823,
+      "prob_mae": 3.7565646879155134e-17,
+      "prob_p95_abs": 1.1102230246251565e-16,
+      "class_flips": 0,
+      "class_flip_rate": 0.0,
+      "delta_oof_auc": 0.0
+    },
+    "shape3d": {
+      "tag": "swap_in_shape3d",
+      "n_valid": 5204,
+      "oof_auc": 0.9285720899590316,
+      "prob_mae": 0.024823631458924664,
+      "prob_p95_abs": 0.10950877541728565,
+      "class_flips": 109,
+      "class_flip_rate": 0.02094542659492698,
+      "delta_oof_auc": 0.0007396738490492716
+    },
+    "solvent_code": {
+      "tag": "swap_in_solvent_code",
+      "n_valid": 5204,
+      "oof_auc": 0.9278324161099823,
+      "prob_mae": 3.7565646879155134e-17,
+      "prob_p95_abs": 1.1102230246251565e-16,
+      "class_flips": 0,
+      "class_flip_rate": 0.0,
+      "delta_oof_auc": 0.0
+    },
+    "dihedral": {
+      "tag": "swap_in_dihedral",
+      "n_valid": 5204,
+      "oof_auc": 0.9274331805064998,
+      "prob_mae": 0.007246118839883872,
+      "prob_p95_abs": 0.042913078354093616,
+      "class_flips": 41,
+      "class_flip_rate": 0.007878554957724828,
+      "delta_oof_auc": -0.0003992356034825395
+    },
+    "pm_code": {
+      "tag": "swap_in_pm_code",
+      "n_valid": 5204,
+      "oof_auc": 0.9278041748593301,
+      "prob_mae": 0.0017956829940154319,
+      "prob_p95_abs": 0.009818562029293642,
+      "class_flips": 10,
+      "class_flip_rate": 0.001921598770176787,
+      "delta_oof_auc": -2.824125065226113e-05
+    },
+    "geometry": {
+      "tag": "swap_in_geometry",
+      "n_valid": 5204,
+      "oof_auc": 0.9275705286654095,
+      "prob_mae": 0.016761660972025763,
+      "prob_p95_abs": 0.09839293939905766,
+      "class_flips": 98,
+      "class_flip_rate": 0.018831667947732514,
+      "delta_oof_auc": -0.0002618874445728947
+    }
+  },
+  "n_reconstruction_incomplete": 0,
+  "dihedral_source_counts": {
+    "derived_approximate": 5198,
+    "fail": 6
+  },
+  "note": "OOF protocol only. No training-set in-sample prediction is used anywhere in this file."
+}
