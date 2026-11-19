@@ -53,6 +53,8 @@ since ECFP6 bits depend on it (see `docs/`).
 | `same_dataset_baselines.json`, `.csv`, `same_dataset_mamede_catboost_oof.csv` | Published-fold representation comparison. |
 | `same_dataset_ohecc.json` | Cartesian-coordinate representation (Zhou et al.) reconstruction and its atom-ordering sensitivity. |
 | `label_magnitude_stratification.csv`, `label_error_rate_by_magnitude.csv` | Performance and error rate by rotation magnitude. |
+| `external_metrics.json`, `external_ad_validation.json`, `external_stratified_metrics.json`, `external_predictions_705.csv` | Final external validation on the CORRECTED_V2_FINAL 705-record primary set (691 complete vectors, 441 molecules). |
+| `derived_dihedral_accuracy.json` | Calculator benchmark against curated dihedral and P/M values (26/60 and 40/60 on 60 training molecules). |
 | `drift_impact_2022.09.5.json` | Block importance and perturbation effect sizes. |
 
 ## Environment

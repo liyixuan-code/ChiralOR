@@ -1,0 +1,104 @@
+{
+  "rdkit_version": "2025.03.6",
+  "claim_level": "approximate_validation",
+  "overall": {
+    "n": 691,
+    "auc": 0.5222803399889353
+  },
+  "domain_distance": [
+    {
+      "bucket": "[0.0, 0.5)",
+      "n": 422,
+      "n_pos": 224,
+      "auc": 0.39089556277056275
+    },
+    {
+      "bucket": "[0.5, 0.6)",
+      "n": 127,
+      "n_pos": 57,
+      "auc": 0.5466165413533834
+    },
+    {
+      "bucket": "[0.6, 0.7)",
+      "n": 110,
+      "n_pos": 44,
+      "auc": 0.7854683195592287
+    },
+    {
+      "bucket": "[0.7, 0.8)",
+      "n": 24,
+      "n_pos": 9,
+      "auc": 0.8
+    },
+    {
+      "bucket": "[0.8, 1.01]",
+      "n": 8,
+      "n_pos": 3,
+      "auc": 0.6666666666666665
+    }
+  ],
+  "per_solvent": [
+    {
+      "solvent": "chloroform",
+      "n": 459,
+      "pos_rate": 0.49019607843137253,
+      "auc": 0.5176638176638176
+    },
+    {
+      "solvent": "dcm",
+      "n": 79,
+      "pos_rate": 0.620253164556962,
+      "auc": 0.32789115646258504
+    },
+    {
+      "solvent": "ethanol",
+      "n": 12,
+      "pos_rate": 0.25,
+      "auc": 0.4444444444444444
+    },
+    {
+      "solvent": "methanol",
+      "n": 135,
+      "pos_rate": 0.4444444444444444,
+      "auc": 0.5886666666666666
+    }
+  ],
+  "per_fold_auc": [
+    {
+      "model": "prob_fold0",
+      "auc": 0.43687237003135004
+    },
+    {
+      "model": "prob_fold1",
+      "auc": 0.430585592382102
+    },
+    {
+      "model": "prob_fold2",
+      "auc": 0.5789954567553521
+    },
+    {
+      "model": "prob_fold3",
+      "auc": 0.5867323844490269
+    },
+    {
+      "model": "prob_fold4",
+      "auc": 0.5781656021056514
+    }
+  ],
+  "per_fold_corr_with_ensemble": [
+    0.8154299713206239,
+    0.8144181446483473,
+    0.8674793186138279,
+    0.8426567318592963,
+    0.8408842473592841
+  ],
+  "control_training_via_external_path": {
+    "n": 300,
+    "auc": 0.9973498651270645,
+    "pos_rate": 0.37666666666666665,
+    "pred_pos_rate": 0.36,
+    "path": "training molecules via build_vector(allow_derived_dihedral=True)",
+    "elapsed_s": 24.4
+  },
+  "interpretation": "Control AUC confirms the external feature path preserves model behaviour on in-manifold molecules. External AUC rises with similarity to training: reported performance applies only to the near-domain subgroup; the bulk of the external set lies outside the training manifold (median nearest-neighbour Tanimoto ~0.43)."
+}

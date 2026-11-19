@@ -19,11 +19,21 @@ a model could in principle learn "flip the sign" rather than chemistry.
   without chirality the two vectors are identical, and MACCS is identical.
 
 **Control.** A second cross-validation scheme grouped by stereoisomer family
-instead of by isomeric SMILES. Pooled OOF AUC is 0.9305, against 0.9278 under
-the primary grouping and 0.9264 under molecule-disjoint grouping. Removing the
-enantiomer overlap does not raise performance, so the reported AUC is not
-inflated by that route. Source: `03_Enantiomer_Validation/enantiomer_family_cv_results.json`
-in the revision tree; numbers reproduced in SI Table S6.
+instead of by isomeric SMILES: each molecule and its mirror image receive one
+family id, and StratifiedGroupKFold is re-run (5 folds, random_state 42; CatBoost
+288/8/0.1). This gives 3,260 families, 927 containing more than one record; 634
+of them span more than one primary fold (2,151 records). Pooled OOF AUC is
+0.9305, against 0.9278 under the primary grouping and 0.9264 under
+molecule-disjoint grouping. Removing the enantiomer overlap does not raise
+performance, so the reported AUC is not inflated by that route. The
+enantiomer-family OOF predictions are deposited with the code and reproduce
+0.9305 when recomputed. Source:
+`03_Enantiomer_Validation/enantiomer_family_cv_results.json`,
+`oof_predictions.csv`, `fold_violations.csv`; numbers reproduced in SI Table S6.
+(Two other groupings were checked and are not used: an InChIKey-skeleton
+grouping gives 0.9315 over 3,254 groups, and a manual skeleton recount gives 641
+skeletons with exactly two stereoisomeric forms. SI Table S6 uses only the
+3,260-family definition.)
 
 ## 2. Label reliability
 
@@ -153,16 +163,28 @@ Sources: `same_dataset_baselines.json`, `same_dataset_baselines.csv`,
 
 ## 6. Applicability domain and external transfer
 
-An independent Reaxys set (717 curated records; 698 with complete vectors;
-443 molecules) was scored by the frozen ensemble. Full-domain AUC is 0.520
-[0.448, 0.590], which is chance. Stratification by similarity to the nearest
-training molecule shows why: the median nearest-neighbour Tanimoto is 0.434
-(81% of records below 0.6), and AUC rises to 0.777 [0.650, 0.881] for Tanimoto
-≥ 0.6 (20.9% of records) and 0.812 [0.676, 0.918] when |OR| ≥ 10° is also
-required. Within the training set the median nearest-neighbour Tanimoto is
-0.826, so the external set lies outside the training manifold rather than being
-a sample of the same population. The reported external result therefore applies
-to the domain-qualified subset; it is not a full-domain validation.
+The final external set is the CORRECTED_V2_FINAL primary set: 705 curated
+records (455 molecules; chloroform 464, methanol 146, dichloromethane 81,
+ethanol 14; 344 OR+, 361 OR−; zero molecule–solvent sign conflicts; zero
+structure overlap with training). Of these, 691 records (441 molecules) yielded
+complete feature vectors; 14 were withheld because the dihedral/P-M derivation
+failed. Full-domain AUC is 0.5223 [0.451, 0.595], which is chance. Stratification
+by similarity to the nearest training molecule shows why: the median
+nearest-neighbour Tanimoto is 0.435 (79.5% of records below 0.6), and AUC rises
+to 0.793 [0.658, 0.895] for Tanimoto ≥ 0.6 (20.5%, n = 142) and 0.812
+[0.676, 0.918] when |OR| ≥ 10° is also required (19.2%, n = 133). Performance
+rises monotonically across the boundary (0.5–0.6: 0.547; 0.6–0.7: 0.785;
+0.7–0.8: 0.800). Within the training set the median nearest-neighbour Tanimoto
+is approximately 0.82, so the external set lies outside the training manifold
+rather than being a sample of the same population. The reported external result
+therefore applies to the domain-qualified subset; it is not a full-domain
+validation.
+
+An earlier version of this analysis used a pre-correction set of 717 records
+(698 complete, 443 molecules; AUC 0.5197). That set was superseded by the
+CORRECTED_V2_FINAL re-cleaning, which fixed intra-solvent conflict detection and
+removed 933 duplicate export records; its outputs are archived under
+`results/archive_717/` and must not be mixed with the 705-record numbers.
 
 Source: `07_external_ad_validation.py` → `external_ad_validation.json` in the
 revision tree.

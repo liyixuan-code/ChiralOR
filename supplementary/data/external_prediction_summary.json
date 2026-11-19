@@ -1,0 +1,37 @@
+{
+  "n_records": 705,
+  "n_complete": 691,
+  "n_with_ensemble_prob": 691,
+  "ensemble_rule": "unweighted_mean_of_fold_probabilities",
+  "ensemble_rule_evidence": "NOT_FOUND",
+  "threshold": 0.5,
+  "claim_level": "approximate_validation",
+  "models": [
+    {
+      "file": "catboost_schemaA_fold0.cbm",
+      "sha256": "f98c1bd5f10731660d3185ad593d8082359d2761cc083f1b68fea78360a651d2",
+      "match": true
+    },
+    {
+      "file": "catboost_schemaA_fold1.cbm",
+      "sha256": "6439be846e198ce07e4347433c1fe2951e743b17c7c54df3c8c687c6f3377130",
+      "match": true
+    },
+    {
+      "file": "catboost_schemaA_fold2.cbm",
+      "sha256": "bf3c2e94f793929b4070a812239e0cb81446aedb5d615caefb2c6db3701441bb",
+      "match": true
+    },
+    {
+      "file": "catboost_schemaA_fold3.cbm",
+      "sha256": "d52f42c2cf1f22c1707c115a330f05ae3d27bdb5858dfc2f2f4e2c2e5b3dbc30",
+      "match": true
+    },
+    {
+      "file": "catboost_schemaA_fold4.cbm",
+      "sha256": "c37f92cb13ae852ac298e1ee421ec6376331d014d1159f11fe93c64ba264d289",
+      "match": true
+    }
+  ],
+  "note": "predict_proba only; no retraining, no fine-tuning, no calibration. Per-fold probabilities retained so the ensemble rule can be replaced without re-running the models."
+}

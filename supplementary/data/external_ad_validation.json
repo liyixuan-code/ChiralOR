@@ -1,0 +1,76 @@
+{
+  "ad_definitions": {
+    "similarity": "max Tanimoto (Morgan r=2, 1024 bits) to any unique training molecule; thresholds 0.6 / 0.7",
+    "signal": "measured |OR| thresholds 10 / 15 degrees (weak rotations are condition-sensitive)",
+    "bootstrap": "group-cluster (smiles x solvent), 5000 replicates"
+  },
+  "results": {
+    "all_records": {
+      "name": "full_domain",
+      "n": 691,
+      "coverage": 1.0,
+      "n_pos": 337,
+      "auc": 0.5222803399889353,
+      "auc_ci95": [
+        0.4507524338072513,
+        0.5948847664953071
+      ]
+    },
+    "AD_similarity_0.6": {
+      "name": "tanimoto>=0.6",
+      "n": 142,
+      "coverage": 0.20549927641099855,
+      "n_pos": 56,
+      "auc": 0.7929817275747508,
+      "auc_ci95": [
+        0.6581648048777049,
+        0.8947498833213118
+      ]
+    },
+    "AD_similarity_0.7": {
+      "name": "tanimoto>=0.7",
+      "n": 32,
+      "coverage": 0.04630969609261939,
+      "n_pos": 12,
+      "auc": 0.7708333333333333,
+      "auc_ci95": [
+        0.5182177033492823,
+        0.9914529914529915
+      ]
+    },
+    "AD_OR10": {
+      "name": "|OR|>=10",
+      "n": 581,
+      "coverage": 0.8408104196816208,
+      "n_pos": 279,
+      "auc": 0.5846091765767049,
+      "auc_ci95": [
+        0.5140688425886467,
+        0.6518576081909565
+      ]
+    },
+    "AD_OR15": {
+      "name": "|OR|>=15",
+      "n": 525,
+      "coverage": 0.7597684515195369,
+      "n_pos": 255,
+      "auc": 0.5943355119825708,
+      "auc_ci95": [
+        0.5196207885795021,
+        0.6620467232737101
+      ]
+    },
+    "AD_combined_0.6_OR10": {
+      "name": "tanimoto>=0.6 & |OR|>=10",
+      "n": 133,
+      "coverage": 0.19247467438494936,
+      "n_pos": 53,
+      "auc": 0.811556603773585,
+      "auc_ci95": [
+        0.6763624338624339,
+        0.9180339446142447
+      ]
+    }
+  },
+  "note": "Full-domain AUC is reported unchanged in external_metrics.json. AD-restricted metrics quantify generalization inside the domain the paper's claim actually covers; coverage is stated with each."
+}

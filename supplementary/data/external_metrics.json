@@ -1,0 +1,98 @@
+{
+  "n": 691,
+  "n_pos": 337,
+  "n_neg": 354,
+  "roc_auc": 0.5222803399889353,
+  "average_precision": 0.47093855697284986,
+  "accuracy": 0.4761215629522431,
+  "balanced_accuracy": 0.47302553269962616,
+  "f1": 0.3926174496644295,
+  "mcc": -0.05570673417200825,
+  "brier_score": 0.29341943139239884,
+  "ece_10bin": 0.21230188264013838,
+  "calibration_slope": 0.08981971110589429,
+  "calibration_intercept": -0.021364012189187796,
+  "sensitivity": 0.34718100890207715,
+  "specificity": 0.5988700564971752,
+  "precision_ppv": 0.4517374517374517,
+  "npv": 0.49074074074074076,
+  "confusion": {
+    "tn": 212,
+    "fp": 142,
+    "fn": 220,
+    "tp": 117
+  },
+  "roc_auc_ci95": [
+    0.4507524338072513,
+    0.5948847664953071
+  ],
+  "average_precision_ci95": [
+    0.4018499729183252,
+    0.559999935793668
+  ],
+  "brier_score_ci95": [
+    0.265148856343508,
+    0.3238671833764595
+  ],
+  "ece_10bin_ci95": [
+    0.16919561218854956,
+    0.28215893873454123
+  ],
+  "calibration_slope_ci95": [
+    -0.11987829041500293,
+    0.3219565815057652
+  ],
+  "calibration_intercept_ci95": [
+    -0.2715648102217474,
+    0.24505034886989663
+  ],
+  "balanced_accuracy_ci95": [
+    0.4162748974494131,
+    0.5303979395456832
+  ],
+  "n_bootstrap_effective": 5000,
+  "n_bootstrap_requested": 5000,
+  "cluster_unit": "canonical_smiles x solvent (paper protocol)",
+  "claim_level": "approximate_validation",
+  "gate_status": "PASS",
+  "gate_mode": "relaxed",
+  "dihedral_source_for_external": "derived_approximate",
+  "evaluation_protocol": {
+    "model": "published Publication V1 five-fold CatBoost ensemble (frozen, no retraining)",
+    "ensemble_rule": "unweighted mean of fold probabilities (manifest assumption)",
+    "threshold": 0.5,
+    "bootstrap": "group-cluster (canonical_smiles x solvent), 5000 replicates",
+    "paper_reference": "JCIM manuscript: pooled OOF AUC 0.9278; ECE 10-bin; Brier; calibration slope/intercept; 0.5 threshold"
+  },
+  "reference_paper_metrics": {
+    "oof_auc": 0.9278,
+    "balanced_accuracy": 0.85,
+    "sensitivity": 0.799,
+    "specificity": 0.9,
+    "accuracy": 0.86,
+    "brier": 0.1027,
+    "ece_10bin": 0.0215,
+    "calibration_slope": 0.893,
+    "calibration_intercept": 0.067
+  },
+  "coverage": {
+    "n_cleaned_records": 705,
+    "n_complete_vector": 691,
+    "n_evaluated": 691,
+    "n_excluded": 14,
+    "completion_rate": 0.9801418439716312,
+    "n_unique_molecules": 441
+  },
+  "dihedral_source_counts": {
+    "derived_approximate": 691
+  },
+  "excluded_reasons": {
+    "dihedral;pm_code;geometry": 14
+  },
+  "assumptions": [
+    "Evaluation includes only rows with complete 2283-dim vectors.",
+    "Cluster bootstrap resamples canonical SMILES (all solvent records move together).",
+    "If dihedral_source is 'derived_approximate', those rows use an APPROXIMATION of the Publication V1 dihedral, not the original value and the result is an approximate estimate, not a strict reproduction.",
+    "The five-model ensemble rule is a declared assumption; per-fold probabilities are retained in external_predictions.csv."
+  ]
+}
