@@ -186,3 +186,53 @@ The frozen matrix was assembled across RDKit generations. Probes:
 
 Sources: `ecfp6_probe_*.json`, `paired_oof_reconstruction.json`,
 `FEATURE_GATE.json`.
+
+## 8. Derived baseline dihedral and P/M code (external molecules)
+
+**Why a supplied value is needed.** Columns 2,274 (dihedral, degrees) and 2,275
+(P/M code, ±1) are stored per record in the archived dataset. They are not a
+function of structure alone: 45 of 3,895 molecules carry different dihedral
+values across their solvent records, and 85 records were manually sign-corrected
+during curation (the corrections are mirrored in the P/M column and have no
+encoded rule). For a molecule that was not in the training set no such stored
+value exists, so it must be supplied or derived.
+
+**Why the training pipeline cannot simply be re-run.** The generation path is
+recorded in `class1-4.ipynb` (cells 31 and 35: PM SMARTS match, `AddHs`,
+ETKDGv3 seed 42, MMFF94s, `GetDihedralDeg`). Executing it now does not reproduce
+the stored values: the SMARTS returns no match on all 20 molecules tested, and
+`pm_calculator_correct.calc_pm_helix` reproduces the dihedral on 6/40 sampled
+molecules and the P/M label on 33/40. The residue includes the 85 manual
+corrections, which cannot be reconstructed.
+
+**What was done instead.** External molecules were processed with the reference
+calculator and every row is flagged `derived_approximate`. Benchmark on 60
+unique training molecules (seed 42): exact dihedral (within 0.5°) for 26,
+correct P/M label for 40.
+
+**Consequence, measured.** Under the paired out-of-fold protocol (each sample
+scored only by its own held-out fold model): archived matrix 0.9278; full
+reconstruction with all dihedral values derived 0.9263; only the dihedral column
+replaced 0.9274; only the geometry block replaced 0.9276. In-domain, the
+derivation error costs 0.0004–0.0015 AUC, so it does not explain the external
+result. Source: `derived_dihedral_accuracy.json`, `paired_oof_reconstruction.json`.
+
+## 9. Dichloromethane subgroup in the external set
+
+79 external records are in dichloromethane; their pooled AUC is 0.328 while the
+training-set figure for the same solvent is 0.904 (n = 388). Wavelength is not
+the explanation: all 79 records were measured at 589 nm, as were 692 of the 698
+external records overall.
+
+The pooled value is a source-composition effect. Thirty records (38% of the
+subgroup) come from one publication family in which the model ranks molecules
+above chance (within-family AUC 0.752) but assigns systematically low
+probabilities (mean 0.31 against an observed positive rate of 0.83); a second
+family of ten records shows the opposite offset (observed 0.10, predicted 1.00).
+Pooling families with opposing offsets produces an anti-correlated AUC. Only 12
+dichloromethane records fall inside the applicability domain and 11 of them are
+positive, which is too imbalanced for a domain-qualified estimate.
+
+**Decision.** No dichloromethane-specific performance figure is reported and the
+records remain in the full-domain calculation. Excluding them would raise the
+full-domain AUC from 0.5197 to 0.5395, which is not a defensible adjustment.

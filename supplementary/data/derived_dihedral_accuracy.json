@@ -1,0 +1,11 @@
+{
+  "sample": "60 unique training molecules drawn with seed 42",
+  "n": 60,
+  "dihedral_exact_0.5deg": 26,
+  "pm_label_agree": 40,
+  "frac_dihedral_exact": 0.4333,
+  "frac_pm_agree": 0.6667,
+  "calculator": "pm_calculator_correct.calc_pm_helix",
+  "external_derivation_failures": 19,
+  "external_records_evaluated": 698
+}
